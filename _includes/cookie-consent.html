@@ -1,0 +1,13 @@
+{% if site.data.cookies.display %}
+    <div class="cookie-consent" data-expire="{{ site.data.cookies.expire | default: 14 }}">
+        <div class="cookie-consent__content">
+            {{ site.data.cookies.content }} 
+            <a href="{{ site.data.cookies.link.url }}" class="cookie-consent__link">
+                {{ site.data.cookies.link.title }}
+            </a>
+        </div>
+        <button class="cookie-consent__button btn btn--md btn--primary">
+            I agree
+        </button>
+    </div>
+{% endif %}

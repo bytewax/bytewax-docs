@@ -1,0 +1,113 @@
+/** Docs -- Content **/
+.docs{
+    &__content{
+        width:100%;
+        @include min-sm{
+            max-width:calc(100% - 288px);
+            margin:0 0 0 48px;
+        }
+        @include min-lg{
+            max-width:calc(100% - 348px);
+        }
+        @include min-xxl{
+            max-width:680px;
+            margin:0 64px 0 72px;
+        }
+        h1{
+            margin:.25em 0 .5em 0;
+            color:$black;
+            font-weight:600;
+            font-size:1.5em;
+            @include min-sm{
+                font-size:1.77em;
+            }
+        }
+        h2{
+            margin:2em 0 .5em 0;
+            color:rgba($black,.6);
+            font-weight:600;
+            font-size:1.3125em;
+            line-height:135%;
+            @include min-sm{
+                font-size:1.33em;
+            }
+            &:first-of-type{
+                margin-top:1em;
+            }
+        }
+        h3{
+            margin:2em 0 .5em 0;
+            font-weight:600;
+            @include min-sm{
+                font-size:1.166em;
+            }
+        }
+        p, li{
+            @include min-sm{
+                font-size:16px;
+                line-height:28px;
+            }
+            a:not(.docs__pagination-item){
+                color:$blue;
+                font-weight:600;
+                text-decoration:none;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        pre, code{
+            @include min-sm{
+                font-size:16px;
+                line-height:28px;
+            }
+        }
+        p:not(.alert__content){
+            margin:0 0 1em 0;
+        }
+        ul{
+            margin:24px 0;
+            padding:0 0 0 36px;
+            list-style-type:none;
+            li{
+                margin:.1em 0;
+            }
+            li::before{
+                @include material-icons;
+                margin:0 6px 0 -30px;
+                color:rgba($black,.38);
+                font-size:24px;
+                vertical-align:middle;
+                content:"chevron_right";
+            }
+        }
+        pre{
+            margin:24px 0;
+        }
+        img{
+            max-width:100%;
+            height:auto;
+            margin:1em 0 0 0;
+            border-radius:8px;
+        }
+        code{
+            font-family:$codeFont;
+        }
+    }
+}
+
+/** Dark mode styles **/
+body.dark-mode .docs{
+    &__content{
+        p, li, pre, code{
+            a:not(.docs__pagination-item){
+                color:$yellow;
+            }
+        }
+        ul{
+            li::before{
+                color:rgba($white,.38);
+            }
+        }
+    }
+}

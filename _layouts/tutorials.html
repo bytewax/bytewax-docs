@@ -1,0 +1,26 @@
+---
+layout: base
+---
+
+<main class="tutorials main">
+    <section class="tutorials__container container">
+        <!-- Intro -->
+        <div class="tutorials__intro">
+            <h1 class="h1 tutorials__intro-title">
+                {{ page.title }}
+            </h1>
+            {{ content }}
+        </div>
+
+        <!-- Archive -->
+        <div class="tutorials__archive row">
+            {% assign tutorials = site.tutorials %}
+            {% for entry in tutorials limit:2 %}
+                {% include tutorials/post.html type="featured" %}
+            {% endfor %}
+            {% for entry in tutorials offset:2 %}
+                {% include tutorials/post.html %}
+            {% endfor %}
+        </div>
+    </section>
+</main>

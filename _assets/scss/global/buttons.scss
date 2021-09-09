@@ -1,0 +1,186 @@
+/** UI Elements -- Buttons **/
+.btn{
+    display:inline-block;
+    font-weight:600;
+    font-family:$headingFont;
+    line-height:1;
+    text-align:center;
+    text-decoration:none;
+    border-radius:0;
+    outline:none;
+    cursor:pointer;
+    @include transition(.25s ease-in-out);
+    &--lg{
+        padding:18px 30px 16px 30px;
+        font-size:1.125em;
+        border:1px solid;
+        @include min-sm{
+            padding:18px 36px 16px 36px;
+            font-size:1.11em;
+        }
+    }
+    &--md{
+        padding:14px 27px 12px 27px;
+        font-size:1em;
+        border:1px solid;
+        @include min-sm{
+            padding:15px 32px 13px 32px;
+            font-size:.88em;
+        }
+    }
+    &--primary{
+        color:$white;
+        background-color:$yellow;
+        border-color:$yellow;
+        &:hover, &:focus{
+            color:$yellow;
+            background:transparent;
+            border-color:$yellow;
+        }
+    }
+    &--secondary{
+        color:$white;
+        background-color:$blue;
+        border-color:$blue;
+        &:hover, &:focus{
+            color:$blue;
+            background:transparent;
+            border-color:rgba($blue,.38);
+        }
+    }
+    &--ghost{
+        color:rgba($black,.87);
+        background-color:transparent;
+        border-color:rgba($black,.87);
+        &:hover, &:focus{
+            color:$white;
+            background:$black;
+            border-color:$black;
+        }
+    }
+    &__github{
+        display:inline-block;
+        width:18px;
+        height:18px;
+        margin-right:-2px;
+        margin-left:8px;
+        vertical-align:-4px;
+        background:url('../img/github_black.svg')no-repeat center;
+        background-size:100%;
+        @include min-sm{
+            width:24px;
+            height:24px;
+            margin-right:-4px;
+            vertical-align:-6px;
+        }
+    }
+    &:hover &__github{
+        background:url('../img/github_white.svg')no-repeat center;
+        background-size:100%;
+    }
+    &--md &__github{
+        margin-left:6px;
+        @include min-sm{
+            vertical-align:-7px;
+        }
+    }
+    &__icon{
+        display:inline-block;
+        width:18px;
+        height:18px;
+        font-size:18px;
+        vertical-align:-4px;
+        @include min-sm{
+            width:24px;
+            height:24px;
+            font-size:24px;
+            vertical-align:-6px;
+        }
+        @include material-icons;
+        &--left{
+            margin-right:8px;
+            margin-left:-2px;
+        }
+        &--right{
+            margin-right:-2px;
+            margin-left:8px;
+        }
+    }
+    &--md &__icon{
+        @include min-sm{
+            vertical-align:-7px;
+        }
+        &--left{
+            margin-right:6px;
+        }
+        &--right{
+            margin-left:6px;
+        }
+    }
+    &__arrow{
+        &::before{
+            display:inline-block;
+            width:18px;
+            height:18px;
+            font-size:18px;
+            vertical-align:-4px;
+            content:"";
+            @include material-icons;
+            @include min-sm{
+                width:24px;
+                height:24px;
+                font-size:24px;
+                vertical-align:-6px;
+            }
+        }
+        &--left::before{
+            margin-right:8px;
+            margin-left:-2px;
+            content:"arrow_backward";
+            @include min-sm{
+                margin-left:-4px;
+            }
+        }
+        &--right::before{
+            margin-right:-2px;
+            margin-left:8px;
+            content:"arrow_forward";
+            @include min-sm{
+                margin-right:-4px;
+            }
+        }
+    }
+}
+
+
+/** Dark mode styles **/
+body.dark-mode .btn{
+    &--secondary{
+        color:$white;
+        background-color:$yellow;
+        border-color:$yellow;
+        &:hover, &:focus{
+            color:$yellow;
+            background:transparent;
+            border-color:$yellow;
+        }
+    }
+    &--ghost{
+        color:$white;
+        background-color:transparent;
+        border-color:rgba($white,.18);
+        &:hover, &:focus{
+            color:$black;
+            background-color:$white;
+            border-color:$white;
+        }
+    }
+    &__github{
+        background:url('../img/github_white.svg')no-repeat center;
+        background-size:100%;
+    }
+    &:hover .btn__github{
+        background:url('../img/github_black.svg')no-repeat center;
+        background-size:100%;
+    }
+}

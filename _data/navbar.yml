@@ -1,0 +1,27 @@
+nav:
+- title: Home
+  url: https://www.bytewax.io/
+  button: false
+
+- title: Resources
+  url: /
+  dropdown:
+    - page: Docs
+      url: /
+    - page: Tutorials
+      url: /tutorials/
+    - page: Slack channel
+      url: https://bytewaxcommunity.slack.com/
+  button: false
+
+# - title: Pricing
+#   url: /
+#   button: false
+
+# - title: Blog
+#   url: /blog/
+#   button: false
+
+- title: Contact Us
+  url: https://www.bytewax.io/contact-us/
+  button: true

@@ -1,0 +1,35 @@
+/** Import common files **/
+@import 'global/normalize';
+@import 'global/fonts';
+@import 'global/mixins';
+@import 'global/animate';
+@import 'global/variables';
+@import 'global/typography';
+@import 'global/buttons';
+@import 'global/layout';
+@import 'global/slick';
+@import 'global/prism';
+@import 'global/alerts';
+
+/** Import components (reusable modules) files **/
+@import 'components/navbar';
+@import 'components/article';
+@import 'components/newsletter';
+@import 'components/footer';
+@import 'components/cookie-consent';
+
+/** Import default template **/
+@import 'templates/default';
+
+/** Import docs files **/
+@import 'templates/docs/layout';
+@import 'templates/docs/sidebar';
+@import 'templates/docs/content';
+@import 'templates/docs/toc';
+@import 'templates/docs/pagination';
+
+/** Import tutorial (single post) files **/
+@import 'templates/tutorials/layout';
+@import 'templates/tutorials/content';
+@import 'templates/tutorials/snippets';
+@import 'templates/tutorials/archive';

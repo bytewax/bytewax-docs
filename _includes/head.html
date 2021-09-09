@@ -1,0 +1,73 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
+	
+	{% capture title %}
+		{% if page.title %}
+			{{ page.title | strip_html | xml_escape }} – {{ site.title | strip_html | xml_escape }}
+		{% else %}
+			{{ site.title | strip_html | xml_escape }}
+		{% endif %}
+	{% endcapture %}
+	<title>{{ title }}</title>
+
+	<meta property="og:title" content="{{ title }}">
+	<meta property="twitter:title" content="{{ title }}">
+
+	{% capture description %}
+		{% if page.description %}
+			{{ page.description | strip_html | xml_escape }}
+		{% elsif page.is_post %}
+			{{ page.content | strip_html | xml_escape | truncatewords: 50 }}
+		{% else %}
+			{{ site.description | strip_html | xml_escape }}
+		{% endif %}
+	{% endcapture %}
+
+	<meta name="description" content="{{ description }}">
+	<meta property="og:description" content="{{ description }}">
+	<meta property="twitter:description" content="{{ description }}">
+
+	{% if page.is_post %}
+		{% assign author = site.data.team[page.author] %}
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="{{ author.name }}">
+		<meta property="og:article:published_time" content="{{ page.date | date_to_xmlschema }}">
+		<meta property="og:url" content="{{ page.url | absolute_url }}">
+		{% if page.featured-image %}
+			<meta property="og:image" content="{{ page.featured-image | absolute_url }}">
+  			<meta name="twitter:image" content="{{ page.featured-image | absolute_url }}">
+		{% endif %}
+		<link rel="canonical" href="{{ page.url | absolute_url }}">
+	{% else %}
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="{{ page.url | absolute_url | strip_index }}">
+		{% if site.og-image %}
+			<meta property="og:image" content="{{ site.og-image | absolute_url }}">
+		{% endif %}
+		<link rel="canonical" href="{{ page.url | absolute_url | strip_index }}">
+	{% endif %}
+
+	{% if site.keywords %}
+		<meta name="keywords" content="{{ site.keywords }}">
+	{% endif %}
+
+	{% if site.mobile-theme-col %}
+		<meta name="theme-color" content="{{ site.mobile-theme-col }}">
+	{% endif %}
+
+	{% if site.title %}
+		<meta property="og:site_name" content="{{ site.title }}">
+	{% endif %}
+
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+	{% if site.favicon %}
+		<link rel="icon" href="{{ site.favicon | relative_url }}">
+	{% endif %}
+
+	<!-- Google Analytics -->
+	{% include google_analytics.html %}
+</head>

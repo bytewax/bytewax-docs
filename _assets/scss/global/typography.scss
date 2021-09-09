@@ -1,0 +1,106 @@
+/** Text **/
+body{
+    color:rgba($black,.6);
+    font-size:16px;
+    font-family:$bodyFont;
+    line-height:26px;
+    @include min-sm{
+        font-size:18px;
+        line-height:30px;
+    }
+    &.dark-mode{
+        color:rgba($white,.6);
+        background:$darkBg;
+    }
+}
+p{
+    margin:0 0 .5em 0;
+}
+
+/** Custom selection color **/
+::selection {
+    color: rgba($black,.87);
+    background: $yellow;
+}
+body.dark-mode ::selection{
+    color:$white;
+}
+
+/** Headings **/
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6{
+    margin:0 0 .5em 0;
+    color:$black;
+    font-weight:400;
+    font-family:$headingFont;
+    line-height:130%;
+    @include min-sm{
+        line-height:120%;
+    }
+    strong{
+        font-weight:600;
+    }
+}
+body.dark-mode h1, body.dark-mode .h1,
+body.dark-mode h2, body.dark-mode .h2,
+body.dark-mode h3, body.dark-mode .h3,
+body.dark-mode h4, body.dark-mode .h4,
+body.dark-mode h5, body.dark-mode .h5,
+body.dark-mode h6, body.dark-mode .h6{ 
+    color:$white;
+}
+h1, .h1{
+    font-size:1.6875em;
+    @include min-sm{
+        font-size:2.22em;
+    }
+}
+h2, .h2{
+    font-size:1.5em;
+    @include min-sm{
+        font-size:1.77em;
+    }
+}
+h3, .h3{
+    font-size:1.3125em;
+    line-height:135%;
+    @include min-sm{
+        font-size:1.33em;
+    }
+}
+h4, .h4{
+    font-weight:600;
+    font-size:1em;
+    line-height:135%;
+}
+
+/** Code snippets **/
+.code{
+    display:block;
+    margin-bottom:.75em;
+    font-family:$codeFont;
+    @include min-sm{
+        margin-bottom:1em;
+    }
+    &--white{
+        color:$white;
+    }
+    &--purple{
+        color:$purple;
+    }
+    &--blue{
+        color:$lightBlue;
+    }
+    &--green{
+        color:$oliveGreen;
+    }
+    &--grey{
+        color:#777777;
+    }
+    &--yellow{
+        color:#fad437;
+    }
+    &--indent{
+        padding-left:2em;
+    }
+}

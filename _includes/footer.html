@@ -1,0 +1,36 @@
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer__container container row">
+        <div class="footer__copyright">
+            {% if site.logo %}
+                <img class="footer__logo" src="{{ site.logo | relative_url}}" alt="{{ site.title }}">
+            {% endif %}
+            {% if site.logo-monochrome %}
+                <img class="footer__logo--mono" src="{{ site.logo-monochrome | relative_url}}" alt="{{ site.title }}">
+            {% endif %}
+            {% if site.logo-dark %}
+                <img class="footer__logo--dark" src="{{ site.logo-dark | relative_url}}" alt="{{ site.title }}">
+            {% endif %}
+            <p>&copy; {{ site.data.footer.copyright }}</p>
+        </div>
+        {% for item in site.data.footer.widgets %}
+            <div class="footer__widget footer__widget--{{ item.title | downcase }}">
+                <h5 class="footer__widget-title">
+                    {{ item.title }}
+                </h5>
+                {% if item.nav[0] %}
+                    <ul class="footer__nav">
+                        {% for entry in item.nav %}
+                        <li class="footer__nav-item">
+                            <a class="footer__nav-link" href="{{ entry.url }}">{{ entry.page }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="{{ 'assets/js/scripts.min.js' | relative_url}}"></script>

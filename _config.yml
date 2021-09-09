@@ -1,0 +1,83 @@
+# Global site settings
+title: bytewax
+url: https://docs.bytewax.io
+home_url: https://www.bytewax.io
+author: bytewax
+email: konrad@sienkowski.eu
+language: en
+
+# Global site description, added to HEAD section if page/post description is not specified
+description: bytewax - no infra, only code
+
+# Keywords related to your site's content (for SEO purposes)
+keywords: bytewax, machine, learning, ai, ml, inference
+
+# Configure brand settings (logo, icons, default mobile theme colour)
+logo: 'assets/img/logo.svg'
+logo-reverse: 'assets/img/logo_yellow.svg'
+logo-monochrome: 'assets/img/logo_mono.svg'
+logo-dark: 'assets/img/logo_white.svg'
+favicon: '/assets/img/favicon.png'
+
+# Suggest a colour for mobile browsers to use as the browser's theme. This is only supported by a few mobile browsers.
+mobile-theme-col: '#FAB90F'
+
+# Specify path to global og:image (for social media sharing)
+og-image: '/assets/img/og-image.png'
+
+# Fill in your Google Analytics ID to track your website using Google Analytics (_includes/google_analytics.html)
+# google_analytics: "G-06HTJPTC44"
+
+# Default excerpt word length - truncate the post excerpt to the specified number of words
+excerpt-length: 20
+
+# Add collections for custom content
+collections:
+  docs:
+    output: true
+  tutorials:
+    output: true
+
+# Default YAML values (more information on Jekyll's site)
+defaults:
+  - scope:
+      path: 'assets/img'
+    values:
+      image: true-
+  - scope:
+      type: pages
+      path: _pages
+    values:
+      is_post: false
+  - scope:
+      type: docs
+      path: _docs
+    values:
+      layout: docs
+      permalink: /:slugified_categories/:title/
+  - scope:
+      type: tutorials
+      path: _tutorials
+    values:
+      layout: tutorial
+      permalink: /tutorials/:title/
+
+# Include additional folders
+include:
+ - _pages
+ - .htaccess
+
+# Exclude these files from production site
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - gulpfile.js
+  - README.md
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

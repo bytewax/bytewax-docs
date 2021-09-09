@@ -1,0 +1,30 @@
+<div class="tutorial__intro">
+    <a class="tutorial__intro-link" href="{{ '/tutorials/' | relative_url }}">
+        Back to tutorials
+    </a>
+    <h1 class="tutorial__title">
+        {{ page.title }}
+    </h1>
+    <p class="tutorial__description">
+        {{ page.description }}
+    </p>
+    {% if page.download-url or page.github-url %}
+        <div class="tutorial__buttons">
+            {% if page.download-url %}
+                <a class="btn btn--md btn--primary" href="{{ page.download-url | relative_url }}" download>
+                    Download
+                    <i class="btn__icon btn__icon--right">download</i>
+                </a>
+            {% endif %}
+            {% if page.github-url %}
+                <a class="btn btn--md btn--ghost" href="{{ page.github-url | relative_url }}">
+                    Fork on GitHub
+                    <i class="btn__github"></i>
+                </a>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+<div class="tutorial__text" data-wow-delay=".2s">
+    {{ content }}
+</div>

@@ -1,0 +1,112 @@
+/** Alert styling **/
+.alert{
+    margin:24px 0;
+    padding:16px 24px 16px 30px;
+    border-left:4px solid;
+    position:relative;
+    @include min-sm{
+        font-size:16px;
+        line-height:28px;
+        padding:16px 27px 16px 32px;
+    }
+    a{  
+        font-weight:600;
+        text-decoration:none;
+        &:hover, &:focus{
+            text-decoration: underline;
+        }
+    }
+    &__icon{
+        @include material-icons;
+        position:absolute;
+        z-index:1;
+        left:-18px;
+        top:14px;
+        display:inline-block;
+        width:32px;
+        height:32px;
+        font-size:18px;
+        line-height:18px;
+        padding:7px;
+        border-radius:50%;
+        color: $white;
+    }
+    &__content{
+        margin:0;
+    }
+    &--primary{
+        background-color:rgba($yellow,.06);
+        border-color:$yellow;
+        a, code{
+            color:$yellow;
+        }
+    }
+    &--primary &__icon{
+        background-color:$yellow;
+    }
+    &--secondary{
+        background-color:rgba($turquoise,.06);
+        border-color:$turquoise;
+        a, code{
+            color:$turquoise;
+        }
+    }
+    &--secondary &__icon{
+        background-color: $turquoise;
+    }
+    &--success{
+        background-color:rgba($green,.06);
+        border-color:$green;
+        a, code{
+            color:$green;
+        }
+    }
+    &--success &__icon{
+        background-color: $green;
+    }
+    &--warning{
+        background-color:rgba($orange,.06);
+        border-color:$orange;
+        a, code{
+            color:$orange;
+        }
+    }
+    &--warning &__icon{
+        background-color: $orange;
+    }
+    &--error{
+        background-color:rgba($red,.06);
+        border-color:$red;
+        a, code{
+            color:$red;
+        }
+    }
+    &--error &__icon{
+        background-color: $red;
+    }
+    &--info{
+        background-color:rgba($blue,.06);
+        border-color:$blue;
+        a, code{
+            color:$blue;
+        }
+    }
+    &--info &__icon{
+        background-color: $blue;
+    }
+}
+
+/** Dark mode styles **/
+body.dark-mode .alert{
+    &--primary,
+    &--secondary,
+    &--success,
+    &--warning,
+    &--error,
+    &--info{
+        background-color: $darkGrey;
+        a{
+            color:$white;
+        }
+    }
+}

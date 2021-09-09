@@ -1,0 +1,345 @@
+/** UI Components -- Navbar **/
+.navbar{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index:9999;
+    background:transparent;
+    @include transition(.25s ease-in-out);
+    &__container{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        align-items:center;
+        min-height:92px;
+        padding-top:24px;
+        padding-bottom:24px;
+        @include transition(.25s ease-in-out);
+        @include min-lg{
+            flex-wrap:nowrap;
+            min-height:126px;
+            padding-top:0;
+            padding-bottom:0;
+        }
+    }
+    &__brand{
+        @include max-lg{
+            order:1;
+        }
+    }
+    &__logo{
+        display:block;
+        height:44px;
+        @include min-sm{
+            height:54px;
+        }
+        &--yellow{
+            display:none;
+            height:44px;
+            @include min-sm{
+                height:54px;
+            }
+        }
+        &--dark{
+            display:none;
+            height:44px;
+            @include min-sm{
+                height:54px;
+            }
+        }
+    }
+    &__toggler{
+        position:relative;
+        display:inline-block;
+        height:24px;
+        margin-left:32px;
+        padding:0px;
+        background:transparent;
+        border:0px;
+        border-radius:0px;
+        outline: 0;
+        @include max-lg{
+            order:3;
+        }
+        @include min-lg{
+            display:none;
+        }
+        span{
+            position: relative;
+            left: 0;
+            display: block;
+            width: 24px;
+            height: 3px;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            background-color: $yellow;
+            border-radius:0px;
+            transform: rotate(0deg);
+            opacity: 1;
+        }
+        span:nth-child(1),
+        span:nth-child(3) {
+            transition: transform .5s ease-in-out;
+        }
+        &--open span:nth-child(1) {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            background-color: $white;
+            transform: rotate(135deg);
+            opacity: 1;
+        }
+        &--open span:nth-child(2) {
+            height: 2px;
+            background-color: transparent;
+            visibility: hidden;
+        }
+        &--open span:nth-child(3) {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            background-color: $white;
+            transform: rotate(-135deg);
+            opacity: 1;
+        }
+    }
+    &__nav{
+        display:none;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        width:100%;
+        min-height:calc(100vh - 92px);
+        padding:0;
+        list-style-type:none;
+        @include max-lg{
+            order:4;
+        }
+        @include min-lg{
+            display:flex;
+            flex-direction:row;
+            justify-content:flex-end;
+            min-height:0;
+            margin:0 0 0 auto;
+        }
+        &-item{
+            position:relative;
+            margin:18px 0;
+            line-height:135%;
+            @include min-lg{
+                margin:0 24px;
+            }
+            @include min-xxl{
+                margin:0 36px;
+            }
+            &:last-of-type{
+                @include min-lg{
+                    margin-right:0;
+                }
+            }
+        }
+        &-link{
+            color:$white;
+            font-weight:600;
+            font-size:1.25em;
+            font-family:$headingFont;
+            text-decoration:none;
+            @include min-lg{
+                color:$black;
+                font-size:1em;
+            }
+            &--dropdown::after{
+                display:inline-block;
+                color:rgba($black,.24);
+                font-size:24px;
+                vertical-align:middle;
+                transform:rotate(0deg);
+                content:"arrow_drop_down";
+                @include transition(.25s ease-in-out);
+                @include material-icons;
+                @include min-lg{
+                    color:$yellow;
+                }
+            }
+            &--dropdown-open::after{
+                transform:rotate(-180deg);
+            }
+        }
+        &-item--active &-link{
+            color:$black;
+            @include min-lg{
+                color:$yellow;
+            }
+        }
+        &-dropdown{
+            display:none;
+            padding:12px 0 0 0;
+            list-style-type:none;
+            @include min-lg{
+                position:absolute;
+                top:48px;
+                left:-24px;
+                min-width:220px;
+                padding:12px 24px 16px 24px;
+                background:$yellow;
+            }
+            &-item{
+                margin:12px 0;
+                line-height:135%;
+                text-align:center;
+                @include min-lg{
+                    margin:10px 0;
+                    text-align:left;
+                }
+            }
+            &-link{
+                color:$black;
+                font-weight:600;
+                font-size:1.25em;
+                font-family:$headingFont;
+                text-decoration:none;
+                @include min-lg{
+                    color:$white;
+                    font-size:1em;
+                }
+            }
+            &::before{
+                position:absolute;
+                top:-5px;
+                left:48px;
+                display:none;
+                border-color: transparent transparent $yellow transparent;
+                border-style: solid;
+                border-width: 0 5px 5px 5px;
+                content:"";
+                @include min-lg{
+                    display:inline-block;
+                }
+            }
+        }
+        &-btn{
+            display:inline-block;
+            padding:19px 32px 18px 36px;
+            color:$white;
+            font-weight:600;
+            font-size:1.25em;
+            font-family:$headingFont;
+            text-decoration:none;
+            background:$black;
+            border:1px solid $black;
+            @include min-lg{
+                padding:15px 24px 13px 30px;
+                font-size:1em;
+                background:$yellow;
+                border:1px solid $yellow;
+            }
+            @include transition(.35s ease-in-out);
+            &::after{
+                display:inline-block;
+                margin:0 0 0 2px;
+                vertical-align:-4px;
+                content:"arrow_right";
+                @include material-icons;
+            }
+            &:hover, &:focus{
+                color:$white;
+                background-color:$blue;
+                border-color:$blue;
+            }
+        }
+    }
+
+    /** States **/
+    &--open{
+        background:$yellow;
+    }
+    &--open &__logo{
+        display:none;
+    }
+    &--open &__logo--yellow{
+        display:block;
+    }
+    &--scroll:not(.navbar--open){
+        background:$white;
+        box-shadow:0px 3px 9px rgba($black,.12);
+    }
+    &--scroll &__container{
+        @include min-lg{
+            min-height:96px;
+        }
+    }
+
+    /** Dark-light mode switch **/
+    &__switch{
+        position:relative;
+        min-width:36px;
+        height:12px;
+        margin-left:auto;
+        padding:0;
+        border:0;
+        border-radius:30px;
+        outline:none;
+        cursor:pointer;
+        @include transition(background-color .25s ease-in-out);
+        @include max-lg{
+            order:2;
+        }
+        @include min-lg{
+            margin-left:54px;
+        }
+        &::before{
+            position:absolute;
+            top:-9px;
+            left:0;
+            padding:6px;
+            font-size:18px;
+            border-radius:50%;
+            box-shadow:0px 1px 2px rgba($black,.24);
+            @include material-icons;
+            @include transition(transform .25s ease-in-out);
+        }
+        &--light{
+            background-color:rgba($black,.06);
+        }
+        &--light::before{
+            color:$yellow;
+            background-color:$white;
+            transform:translateX(-15px);
+            content:"light_mode";
+        }
+        &--dark{
+            background-color:rgba($white,.18);
+        }
+        &--dark::before{
+            color:$white;
+            background-color:$darkGrey;
+            transform:translateX(21px);
+            content:"dark_mode";
+        }
+    }
+}
+
+/** Dark mode styles **/
+body.dark-mode .navbar{
+    &__logo{
+        display:none;
+    }
+    &__logo--dark{
+        display:block;
+    }
+    &__nav{
+        &-link{
+            @include min-lg{
+                color:$white;
+            }
+        }
+    }
+    &--scroll:not(.navbar--open){
+        background:$darkBg;
+        box-shadow:0px 3px 9px rgba($black,.12);
+    }
+    &--open .navbar__logo--dark{
+        display:none;
+    }
+}

@@ -1,0 +1,259 @@
+/** Tutorial -- Code snippet **/
+.tutorial{
+    &__snippets{
+        width:100%;
+        padding-top:24px;
+        font-size:14px;
+        line-height:22px;
+        @include min-sm{
+            padding-top:36px;
+            font-size:16px;
+            line-height:28px;
+        }
+        @include min-lg{
+            position:sticky;
+            top:126px;
+            left:0;
+            width:calc(50% - 24px);
+            margin:0 0 0 auto;
+            padding-top:0;
+        }
+        @include min-xxl{
+            width:calc(60% - 24px);
+        }
+        &-nav{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:wrap;
+            margin:0;
+            padding:0;
+            list-style-type:none;
+            @include min-sm{
+                flex-wrap:nowrap;
+                overflow-x:auto;
+                overflow-y:hidden;
+            }
+            &-item{
+                width:100%;
+                border-left:3px solid transparent;
+                @include transition(.25s ease-in-out);
+                @include min-sm{
+                    width:auto;
+                    border-bottom:3px solid transparent;
+                    border-left:0;
+                }
+                &--active{
+                    border-color:$yellow;
+                }
+            }
+            &-link{
+                display:block;
+                padding:10px 12px;
+                color:rgba($black,.6);
+                font-weight:600;
+                font-size:14px;
+                line-height:22px;
+                text-decoration:none;
+                @include transition(.25s ease-in-out);
+                @include min-sm{
+                    padding:3px 16px 12px 16px;
+                    white-space:nowrap;
+                }
+                &::before{
+                    display:inline-block;
+                    margin-right:8px;
+                    color:rgba($black,.18);
+                    font-size:24px;
+                    line-height:1;
+                    vertical-align:-7px;
+                    content:"code";
+                    @include material-icons;
+                }
+                &--notebook::before{
+                    content:"summarize";
+                }
+            }
+            &-item--active &-link{
+                color:rgba($black,.87);
+                &::before{
+                    color:rgba($black,.38);
+                }
+            }
+        }
+        &-tabs{
+            div.code-toolbar>.toolbar{
+                display:none;
+            }
+            div.code-toolbar:hover>.toolbar{
+                display:block;
+            }
+        }
+        &-tab{
+            display:none;
+            margin:0!important;
+            overflow:auto;
+            outline:none;
+            @include transition(background-color .5s ease-in-out);
+            @include min-lg{
+                max-height:calc(100vh - 168px - 72px);
+            }
+            &--active{
+                display:block;
+            }
+            &--highlight{
+                background-color: #dedede!important;
+            }
+        }
+        &-buttons{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin:24px 0;
+        }
+        &-btn{
+            padding:0;
+            color:$yellow;
+            font-weight:600;
+            font-size:14px;
+            background:transparent;
+            border:0;
+            border-radius:0;
+            cursor:pointer;
+            &--prev::before,
+            &--next::after{
+                @include material-icons;
+                display:inline-block;
+                font-size:24px;
+                line-height:24px;
+                vertical-align: -7px;
+            }
+            &--prev::before{
+                content:"arrow_left";
+            }
+            &--next::after{
+                content:"arrow_right";
+            }
+            &--inactive{
+                color:rgba($black,.38);
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+/** Dark mode styles **/
+body.dark-mode .tutorial{
+    &__snippets{
+        &-nav{
+            border-bottom-color:rgba($white,.12);
+            &-link{
+                color:rgba($white,.6);
+                &::before{
+                    color:rgba($white,.18);
+                }
+            }
+            &-item--active .tutorial__snippets-nav-link{
+                color:rgba($white,.87);
+                &::before{
+                    color:rgba($white,.38);
+                }
+            }
+        }
+        &-tab--highlight{
+            background-color: #444!important;
+        }
+        &-btn--inactive{
+            color:rgba($white,.38);
+        }
+    }
+}
+
+/** Notebook render styling **/
+.nb{
+    &-markdown-cell{
+        padding-top:12px;
+        padding-bottom:1.5em;
+        h1, h2, h3, h4, h5{
+            font-family:$bodyFont;
+            font-weight:600;
+        }
+        h1{
+            font-size:1.5em;
+            @include min-sm{
+                font-size:1.77em;
+            }
+        }
+        h2{
+            font-size:1.3125em;
+            @include min-sm{
+                font-size:1.33em;
+            }
+        }
+        h3, h4,h5{
+            font-size:1em;
+        }
+    }
+    &-stdout, 
+    &-stderr {
+        white-space: pre-wrap;
+        margin: 1em 0;
+    }
+    &-cell {
+        position: relative;  
+        padding-left:96px;
+        border-bottom:1px solid rgba($black,.12);
+        &:last-of-type{
+            border-bottom:0;
+        }
+        &--highlight{
+            background: rgba($black,.09);
+            background: linear-gradient(to right, rgba($black,.09) 70%, rgba($black,0));
+        }
+        pre[class*=language-]{
+            background:transparent;
+        }
+    }
+    &-cell + .nb-cell {
+        margin-top: 0.5em;
+    }
+    &-input,
+    &-output{
+        position: relative;
+    }
+    &-output:before, 
+    &-input:before {
+        position: absolute;    
+        font-family: $codeFont;
+        color: rgba($black,.38);
+        text-align: right;
+        left: -96px;
+        width: 96px;
+        padding-right:6px;
+        top: .75em;
+    }
+    &-input:before {
+        content: "In [" attr(data-prompt-number) "]:";
+    }
+    &-output:before {
+        content: "Out [" attr(data-prompt-number) "]:";
+    }
+}
+
+/** Dark mode **/
+body.dark-mode .nb{
+    &-output:before, 
+    &-input:before {
+        color:rgba($white,.38);
+    }
+    &-cell{
+        border-bottom:1px solid rgba($white,.12);
+        pre[class*=language-]{
+            background:transparent;
+        }
+    }
+    &-cell--highlight{
+        background: rgba($white,.09);
+        background: linear-gradient(to right, rgba($white,.09) 70%, rgba($white,0));
+    }
+}

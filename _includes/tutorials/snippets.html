@@ -1,0 +1,36 @@
+<div class="tutorial__snippets line-numbers">
+    {% if page.snippets[0] %}
+        <ul class="tutorial__snippets-nav">
+            {% for snippet in page.snippets %}
+                {% if forloop.first == true %}
+                <li class="tutorial__snippets-nav-item tutorial__snippets-nav-item--active">
+                {% else %}
+                <li class="tutorial__snippets-nav-item">
+                {% endif %}
+                    <a class="tutorial__snippets-nav-link" href="#{{ snippet.id }}">{{ snippet.name }}</a>
+                </li>
+            {% endfor %}
+            {% for notebook in page.notebooks %}
+                <li class="tutorial__snippets-nav-item">
+                    <a class="tutorial__snippets-nav-link tutorial__snippets-nav-link--notebook" href="#{{ notebook.id }}">{{ notebook.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="tutorial__snippets-tabs">
+            {% for snippet in page.snippets %}
+                {% if forloop.first == true %}
+                    <pre class="tutorial__snippets-tab tutorial__snippets-tab--active linkable-line-numbers" data-src="{{ snippet.url | relative_url }}" id="{{ snippet.id | slugify }}"></pre>
+                {% else %}
+                    <pre class="tutorial__snippets-tab linkable-line-numbers" data-src="{{ snippet.url | relative_url }}" id="{{ snippet.id | slugify }}"></pre>
+                {% endif %}
+            {% endfor %}
+            {% for notebook in page.notebooks %}
+                <div class="tutorial__snippets-tab tutorial__snippets-tab--notebook" data-src="{{ notebook.url | relative_url }}" id="{{ notebook.id | slugify }}"></div>
+            {% endfor %}
+        </div>
+        <div class="tutorial__snippets-buttons">
+            <button class="tutorial__snippets-btn tutorial__snippets-btn--prev tutorial__snippets-btn--inactive" id="prev">Previous step</button>
+            <button class="tutorial__snippets-btn tutorial__snippets-btn--next" id="next">Next step</button>
+        </div>
+    {% endif %}
+</div>

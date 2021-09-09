@@ -1,0 +1,100 @@
+/** Default **/
+.default{
+    padding-top:92px;
+    @include min-lg{
+        padding-top:126px;
+    }
+    &__container{
+        max-width:992px;
+        margin:0 auto;
+        padding-top:12px;
+        padding-bottom:64px;
+        @include min-sm{
+            padding-top:24px;
+            padding-bottom:96px;
+        }
+        @include min-lg{
+            padding-top:36px;
+            padding-bottom:120px;
+        }
+    }
+    &__title{
+        margin-bottom:.75em;
+        font-weight:600;
+    }
+    &__content{
+        h2{
+            margin:2em 0 .5em 0;
+            color:rgba($black,.6);
+            font-weight:600;
+            font-size:1.3125em;
+            line-height:135%;
+            @include min-sm{
+                font-size:1.33em;
+            }
+            &:first-of-type{
+                margin-top:1em;
+            }
+        }
+        h3{
+            margin:1.5em 0 .5em 0;
+            font-weight:600;
+            @include min-sm{
+                font-size:1.166em;
+            }
+        }
+        h4{
+            margin:1.25em 0 .25em 0;
+        }
+        p{
+            margin:0 0 1em 0;
+        }
+        p, li, pre, code{
+            @include min-sm{
+                font-size:16px;
+                line-height:28px;
+            }
+        }
+        ul{
+            margin:24px 0;
+            padding:0 0 0 36px;
+            list-style-type:none;
+            li{
+                margin:0 0 .5em 0;
+            }
+            li::before{
+                @include material-icons;
+                margin:0 6px 0 -30px;
+                color:rgba($black,.38);
+                font-size:24px;
+                vertical-align:middle;
+                content:"chevron_right";
+            }
+            li ul{
+                margin:.5em 0 1em 0;
+            }
+        }
+        a{
+            color:$blue;
+            font-weight:600;
+            text-decoration:none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/** Dark mode styles **/
+body.dark-mode .default{
+    &__content{
+        a{
+            color:$yellow;
+        }
+        ul {
+            li::before{
+                color:rgba($white,.38);
+            }
+        }
+    }
+}

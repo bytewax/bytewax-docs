@@ -1,0 +1,10 @@
+# Cookie consent settings
+  display: false
+  # How many days takes for cookie of the popup to reset  
+  expire: 28 
+  content: > 
+    This website uses cookies to provide services at the highest level. You can change cookie settings (including their blocking) in your browser settings at any time. 
+    By continuing to use the site, you agree to their use.
+  link:
+    title: Privacy policy
+    url: /privacy-policy/

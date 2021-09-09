@@ -1,0 +1,48 @@
+/** Docs -- Prev/next nav **/
+.docs{
+    &__pagination{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        align-items:center;
+        justify-content:space-between;
+        margin-top:36px;
+        padding-top:18px;
+        border-top:1px solid rgba($black,.12);
+        @include min-lg{
+            flex-wrap:nowrap;
+        }
+        &-item{
+            color:$yellow;
+            font-weight:600;
+            font-family:$headingFont;
+            text-decoration:none;
+            &::before, 
+            &::after{
+                @include material-icons;
+                display:inline-block;
+                font-size:24px;
+                vertical-align:-6px;
+            }
+            &--prev{
+                margin-right:auto;
+            }
+            &--prev::before{
+                content:"arrow_left";
+            }
+            &--next{
+                margin-left:auto;
+            }
+            &--next::after{
+                content:"arrow_right";
+            }
+        }
+    }
+}
+
+/** Dark mode styles **/
+body.dark-mode .docs{
+    &__pagination{
+        border-color:rgba($white,.12);
+    }
+}

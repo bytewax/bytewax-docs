@@ -1,0 +1,65 @@
+/** Docs -- Table of contents **/
+.docs{
+    &__toc{
+        display:none;
+        @include min-xxl{
+            position:sticky;
+            top:128px;
+            display:block;
+            min-width:202px;
+        }
+        &-title{
+            margin-bottom:8px;
+            padding-top:12px;
+            padding-bottom:12px;
+            color:rgba($black,.6);
+            border-bottom:2px solid rgba($black,.12);
+        }
+        &-list{
+            margin:0;
+            padding:0;
+            list-style-type:none;
+        }
+        &-item{
+            position:relative;
+        }
+        &-link{
+            display:block;
+            padding:2px 0;
+            color:inherit;
+            font-size:.888em;
+            text-decoration: none;
+            &::before{
+                position:absolute;
+                left:-18px;
+                color:$yellow;
+                content:"#";
+                @include opacity(0);
+                @include transition(opacity .25s ease-in-out);
+            }
+        }
+        &-item--active &-link{
+            color:$yellow;
+            font-weight:600;
+        }
+        &-item:hover &-link{
+            color:rgba($black,.87);
+        }
+        &-item:hover &-link::before{
+            @include opacity(1);
+        }
+    }
+}
+
+/** Dark mode styles **/
+body.dark-mode .docs{
+    &__toc{
+        &-title{
+            color:rgba($white,.6);
+            border-color:rgba($white,.12);
+        }
+        &-item:hover .docs__toc-link{
+            color:rgba($white,.87);
+        }
+    }
+}

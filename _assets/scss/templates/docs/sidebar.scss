@@ -1,0 +1,222 @@
+/** Docs -- Sidebar **/
+.docs{
+    &__sidebar{
+        width:100%;
+        margin-bottom:36px;
+        padding-bottom:24px;
+        border-bottom:1px solid rgba($black,.12);
+        @include min-sm{
+            position:sticky;
+            top:128px;
+            min-width:240px;
+            max-width:240px;
+            margin-bottom:0;
+            padding-bottom:0;
+            border-bottom:0;
+        }
+        @include min-lg{
+            min-width:300px;
+            max-width:300px;
+        }
+    }
+    &__search{
+        position:relative;
+        margin-bottom:18px;
+        @include min-sm{
+            margin-bottom:24px;
+        }
+        &::before{
+            position:absolute;
+            top:12px;
+            left:12px;
+            font-size:24px;
+            content:"search";
+            @include material-icons;
+            @include min-sm{
+                top:15px;
+                left:15px;
+            }
+        }
+        &-input{
+            width:100%;
+            height:48px;
+            padding-left:48px;
+            font-size:0.875em;
+            border:1px solid rgba($black,.12);
+            border-radius: 0;
+            outline:none;
+            @include placeholder(rgba($black,.6));
+            @include min-sm{
+                height:54px;
+                padding-left:50px;
+                font-size:.888em;
+            }
+            &:focus{
+                border-color:rgba($black,.18);
+                box-shadow: 0 1px 3px rgba($black,0.12),
+            }
+            &::-webkit-search-cancel-button{
+                position:absolute;
+                top:15px;
+                right:5px;
+                width: 24px;
+                height: 24px;
+                background:url('../img/cancel-grey.svg')no-repeat center;
+                background-size:10px;
+                -webkit-appearance: none;
+            }
+        }
+        &-results{
+            position:absolute;
+            top:54px;
+            z-index:3;
+            width:100%;
+            max-height:320px;
+            margin:0;
+            padding:0;
+            overflow:auto;
+            list-style-type:none;
+            background:$white;
+            border:1px solid rgba($black,.12);
+            border-top:0;
+            box-shadow: 0 3px 9px rgba($black,0.18);
+            @include min-sm{
+                font-size:.777em;
+                line-height:150%;
+            }
+            &-item{
+                &--blank{
+                    padding:8px 15px;
+                    border-left:3px solid $red;
+                }
+            }
+            &-link{
+                display:block;
+                padding:8px 15px;
+                color:rgba($black,.6);
+                text-decoration:none;
+                border-left:3px solid transparent;
+                @include transition(.25s ease-in-out);
+                &:hover{
+                    color:rgba($black,.87);
+                    border-color:$yellow;
+                }
+            }
+        }
+    }
+    &__nav{
+        margin:0;
+        padding:0;
+        list-style-type: none;
+        &-toggle{
+            display:block;
+            padding:6px 0;
+            color:$black;
+            font-weight:600;
+            font-size:1.125em;
+            font-family:$headingFont;
+            cursor:pointer;
+            @include min-sm{
+                padding:9px 0;
+                font-size:1em;
+            }
+            &::before{
+                display:inline-block;
+                margin-right:8px;
+                color:$yellow;
+                font-size:24px;
+                vertical-align:-6px;
+                transform:rotate(-90deg);
+                content:"expand_more";
+                @include material-icons;
+                @include transition(transform .25s ease-in-out);
+            }
+        }
+        &-item--active &-toggle::before{
+            transform:rotate(0deg);
+        }
+        &-item--active &-dropdown{
+            display:block;
+        }
+        &-dropdown{
+            display:none;
+            margin:0;
+            padding:0 0 12px 0;
+            list-style-type:none;
+            &-link{
+                position:relative;
+                display:block;
+                padding:6px 0 6px 29px;
+                color:inherit;
+                font-size:1em;
+                line-height:150%;
+                text-decoration:none;
+                border-left:3px solid transparent;
+                @include transition(.25s ease-in-out);
+                @include min-sm{
+                    font-size:.888em;
+                }
+            }
+            &-item--external &-link{
+                padding-right:36px;
+            }
+            &-item--external &-link::after{
+                position:absolute;
+                top:8px;
+                right:8px;
+                display:inline-block;
+                color:rgba($black,.38);
+                font-size:20px;
+                content:"open_in_new";
+                @include material-icons;
+            }
+            &-item--active &-link{
+                color:rgba($black,.87);
+                border-color:rgba($black,.12);
+            }
+            &-item:hover &-link{
+                color:rgba($black,.87);
+                border-color:$yellow;
+            }
+        }
+    }
+}
+
+/** Dark mode styles **/
+body.dark-mode .docs{
+    &__search{
+        &::before{
+            color:rgba($white,.38);
+        }
+        &-input{
+            color:$white;
+            background:transparent;
+            border:1px solid rgba($white,.12);
+            @include placeholder(rgba($white,.6));
+        }
+        &-results{
+            background-color:$darkGrey;
+            border:1px solid rgba($white,.12);
+        }
+        &-results-link{
+            color:rgba($white,.6);
+            &:hover{
+                color:rgba($white,.87);
+            }
+        }
+    }
+    &__nav {
+        &-toggle{
+            color:$white;
+        }
+        &-dropdown{
+            &-item--active .docs__nav-dropdown-link{
+                color:rgba($white,.87);
+                border-color:rgba($white,.12);
+            }
+            &-item:hover .docs__nav-dropdown-link{
+                color:rgba($white,.87);
+            }
+        }
+    }
+}

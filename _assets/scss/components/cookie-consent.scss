@@ -1,0 +1,35 @@
+/** UI Components -- Cookie consent **/
+.cookie-consent{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:999;
+    display:none;
+    max-width:calc(100vw - 36px);
+    padding:21px;
+    text-align:center;
+    background-color:$blue;
+    box-shadow:0px 3px 9px rgba($black,.38);
+    @include min-sm{
+        right:24px;
+        bottom:24px;
+        max-width:320px;
+        padding:24px;
+        text-align:left;
+    }
+    &__content{
+        margin-bottom:18px;
+        color:rgba($white,.76);
+        font-size:13px;
+        line-height:21px;
+    }
+    &__link{
+        color:$white;
+        font-weight:600;
+        text-decoration:none;
+        @include transition(.25s ease-in-out);
+        &:hover{
+            text-decoration:underline;
+        }
+    }
+}

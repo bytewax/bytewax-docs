@@ -1,0 +1,154 @@
+/** UI Components -- Footer **/
+.footer{
+    background-color: rgba($black,.06);
+    &__container{
+        padding-top:64px;
+        padding-bottom:48px;
+        @include min-sm{
+            padding-top:72px;
+            padding-bottom:96px;
+        }
+        @include min-xxl{
+            padding-top:96px;
+            padding-bottom:136px;
+        }
+    }
+    &__logo{
+        display:none;
+        @include min-sm{
+            display:block;
+            height:44px;
+            margin:0 auto;
+        }
+        @include min-lg{
+            margin:0 0 18px 0;
+        }
+        &--mono{
+            display:block;  
+            height:40px;
+            margin:0 auto 12px auto;
+            @include opacity(.24);
+            @include min-sm{
+                display:none;
+            }
+        }
+        &--dark{
+            display:none;
+        }
+    }
+    &__copyright{
+        order:4;
+        width:calc(100% + 48px);
+        margin:48px -18px 0 -18px;
+        padding:48px 36px 0 36px;
+        color:rgba($black,.38);
+        font-size:14px;
+        line-height:22px;
+        text-align:center;
+        border-top:1px solid rgba($black,.12);
+        @include min-lg{
+            order:1;
+            width:auto;
+            max-width:33.3%;
+            margin:0 auto 0 0;
+            padding:0;
+            text-align:left;
+            border-top:0;
+        }
+        @include min-xxl{
+            max-width:none;
+        }
+    }
+    &__widget{
+        margin:0 auto;
+        text-align:center;
+        @include min-lg{
+            margin:0 64px;
+            text-align:left;
+        }
+        &-title{
+            margin-bottom:.75em;
+            font-weight:600;
+            font-size:1.125em;
+            @include min-sm{
+                font-size:1em;
+            }
+        }
+        &--about{
+            width:50%;
+            margin-bottom:48px;
+            @include min-sm{
+                width:auto;
+                margin-bottom:0;
+            }
+            @include min-lg{
+                order:2;
+            }
+        }
+        &--resources{
+            width:50%;
+            margin-bottom:48px;
+            @include min-sm{
+                width:auto;
+                margin-bottom:0;
+            }
+            @include min-lg{
+                order:3;
+            }
+        }
+        &--legal{
+            width:100%;
+            @include min-sm{
+                width:auto;
+            }
+            @include min-lg{
+                order:4;
+                margin-right:36px;
+            }
+        }
+    }
+    &__nav{
+        margin:0;
+        padding:0;
+        list-style-type:none;
+        &-item{
+            margin:8px 0;
+            line-height:135%;
+        }
+        &-link{
+            color:inherit;
+            font-size:0.88em;
+            text-decoration:none;
+        }
+    }
+}
+
+/** Dark mode styles **/
+body.dark-mode .footer{
+    background-color: rgba($white,.03);
+    &__copyright{
+        color:rgba($white,.38);
+        border-top:1px solid rgba($white,.06);
+        @include min-lg{
+            border-top:0;
+        }
+    }
+    &__logo{
+        display:none;
+        &--mono{
+            display:none;
+        }
+        &--dark{
+            display:block;
+            height:40px;
+            margin:0 auto 12px auto;
+            @include min-sm{
+                height:44px;
+                margin:0 auto;
+            }
+            @include min-lg{
+                margin:0 0 18px 0;
+            }
+        }
+    }
+}

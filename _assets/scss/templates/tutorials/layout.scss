@@ -1,0 +1,22 @@
+/** Tutorial -- Layout **/
+.tutorial{
+    &__container{
+        position:relative;
+        padding-top:12px;
+        padding-bottom:72px;
+        @include min-sm{
+            padding-top:24px;
+            padding-bottom:96px;
+        }
+        @include min-lg{
+            padding-bottom:150px;
+        }
+    }
+    &__row{
+        position:relative;
+        align-items:flex-start;
+        @include min-lg{
+            flex-wrap:nowrap;
+        }
+    }
+}

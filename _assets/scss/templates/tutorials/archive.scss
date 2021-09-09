@@ -1,0 +1,173 @@
+/** Tutorials -- Archive **/
+.tutorials{
+    &__container{
+        position:relative;
+        padding-top:12px;
+        padding-bottom:48px;
+        @include min-sm{
+            padding-top:24px;
+            padding-bottom:72px;
+        }
+        @include min-lg{
+            padding-bottom:120px;
+        }
+    }
+    &__intro{
+        margin-bottom:36px;
+        @include min-sm{
+            margin-bottom:48px;
+        }
+        @include min-lg{
+            margin-bottom:54px;
+        }
+        &-title{
+            margin-bottom:.375em;
+            font-weight:600;
+        }
+    }
+    &__archive{
+        margin:0 -18px;
+        @include min-lg{
+            margin:0 -24px;
+        }
+    }
+    &__post{
+        display:flex;
+        &-thumbnail{
+            position:relative;
+            margin:0;
+            overflow:hidden;
+            &-img{
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+            }
+        }
+        &-permalink{
+            color:inherit;
+            text-decoration:none;
+        }
+        &-title{
+            margin-bottom:8px;
+            font-weight:600;
+            @include min-sm{
+                margin-bottom:12px;
+            }
+        }
+        &-link{
+            display:inline-block;
+            color:$yellow;
+            font-weight:600;
+            font-size:1em;
+            font-family:$headingFont;
+            text-decoration:none;
+            &::after{
+                display:inline-block;
+                font-size:24px;
+                vertical-align:-7px;
+                content:"arrow_right";
+                @include material-icons;
+            }
+        }
+        &--featured{
+            flex-direction:column;
+            width:100%;
+            margin:0 18px 48px 18px;
+            @include min-sm{
+                width:calc(50% - 36px);
+                margin:0 18px 64px 18px;
+                padding-bottom:36px;
+                border-bottom:1px solid rgba($black,.12);
+            }
+            @include min-lg{
+                width:calc(50% - 48px);
+                margin:0 24px 64px 24px;
+            }
+        }
+        &--featured &-thumbnail{
+            height:210px;
+            margin-bottom:27px;
+            border-radius:12px;
+            @include min-lg{
+                height:270px;
+            }
+            @include min-xxl{
+                height:320px;
+            }
+            &-img{
+                width:auto;
+                max-width:100%;
+                height:auto;
+            }
+        }
+        &--featured &-excerpt{
+            margin-bottom:18px;
+        }
+        &--archive{
+            flex-direction:row;
+            align-items:center;
+            width:100%;
+            margin:0 18px 27px 18px;
+            @include min-sm{
+                margin:0 18px 36px 18px;
+            }
+            @include min-lg{
+                width:calc(50% - 48px);
+                margin:0 24px 36px 24px;
+            }
+        }
+        &--archive &-thumbnail{
+            min-width:45%;
+            height:150px;
+            margin-right:24px;
+            border-radius:8px;
+            @include min-sm{
+                min-width:33.3%;
+                height:100%;
+                margin-right:36px;
+            }
+            @include min-lg{
+                min-width:40%;
+                border-radius:10px;
+            }
+            @include min-xxl{
+                min-width:33.3%;
+            }
+            &-img{
+                width:auto;
+                height:100%
+            }
+        }
+        &--archive &-content{
+            @include min-sm{
+                padding:18px 0;
+            }
+        }
+        &--archive &-title{
+            @include min-sm{
+                margin-bottom:6px;
+            }
+        }
+        &--archive &-excerpt{
+            display:none;
+            @include min-sm{
+                display:block;
+                margin-bottom:12px;
+                font-size:16px;
+                line-height:28px;
+            }
+        }
+    }
+}
+    
+/** Dark mode styles **/
+body.dark-mode .tutorials{
+    &__post{
+        &--featured{
+            @include min-sm{
+                border-bottom:1px solid rgba($white,.12);
+            }
+        }
+    }
+}

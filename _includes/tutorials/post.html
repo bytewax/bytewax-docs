@@ -1,0 +1,31 @@
+{% if include.type == "featured" %}
+<article class="tutorials__post tutorials__post--featured wow fadeIn" data-wow-delay=".{{ forloop.index }}s" itemscope itemtype="https://schema.org/Article">
+{% else %}
+<article class="tutorials__post tutorials__post--archive wow fadeIn" data-wow-delay=".{{ forloop.index }}s" itemscope itemtype="https://schema.org/Article">
+{% endif %}
+    {% if entry.featured-image %}
+        <figure class="tutorials__post-thumbnail">
+            <a class="tutorials__post-permalink" href="{{ entry.url }}" itemprop="url">
+                <img class="tutorials__post-thumbnail-img" src="{{ entry.featured-image | relative_url }}" alt="{{ entry.featured-image-alt }}" itemprop="image">
+            </a>
+        </figure>
+    {% endif %}
+    <div class="tutorials__post-content">
+        {% if include.type == "featured" %}
+            <h2 class="h2 tutorials__post-title">
+                <a class="tutorials__post-permalink" href="{{ entry.url }}" itemprop="url">
+                    {{ entry.title }}
+                </a>
+            </h2>
+            <p class="tutorials__post-excerpt">{{ entry.description }}</p>
+        {% else %}
+            <h3 class="h3 tutorials__post-title">
+                <a class="tutorials__post-permalink" href="{{ entry.url }}" itemprop="url">
+                    {{ entry.title }}
+                </a>
+            </h3>
+            <p class="tutorials__post-excerpt">{{ entry.description | truncatewords: 16 }}</p>
+        {% endif %}
+        <a class="tutorials__post-link" href="{{ entry.url }}" itemprop="url">Read more</a>
+    </div>
+</article>

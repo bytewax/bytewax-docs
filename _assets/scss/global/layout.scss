@@ -1,0 +1,25 @@
+/** Layout styles **/
+*, *:before, *:after{
+    box-sizing:border-box;
+}
+.row{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+.container{
+    max-width:1366px;
+    margin:0 auto;
+    padding-right:18px;
+    padding-left:18px;
+    @include min-lg{
+        padding-right:24px;
+        padding-left:24px;
+    }
+}
+.main{
+    padding-top:92px;
+    @include min-lg{
+        padding-top:126px;
+    }
+}

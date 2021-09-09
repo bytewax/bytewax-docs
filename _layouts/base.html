@@ -1,0 +1,21 @@
+---
+---
+
+<!doctype html>
+<html lang="{{ page.language | default: site.language | default: 'en' }}">
+    {% include head.html %}
+
+    <body>
+        <!-- Detect color mode before loading document body -->
+        <script src="{{ 'assets/js/color-mode.min.js' | relative_url}}"></script>
+        
+        {% include navbar.html %}
+
+        {{ content }}
+        
+        {% include footer.html %}
+
+        {% include cookie-consent.html %}
+
+    </body>
+</html>

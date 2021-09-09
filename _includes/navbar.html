@@ -1,0 +1,57 @@
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="navbar__container container">
+        <!-- Brand -->
+        <a class="navbar__brand" href="{{ site.home_url }}">
+            {% if site.logo %}
+                <img class="navbar__logo" src="{{ site.logo | relative_url}}" alt="{{ site.title }}">
+            {% endif %}
+            {% if site.logo-reverse %}
+                <img class="navbar__logo--yellow" src="{{ site.logo-reverse | relative_url}}" alt="{{ site.title }}">
+            {% endif %}
+            {% if site.logo-dark %}
+                <img class="navbar__logo--dark" src="{{ site.logo-dark | relative_url}}" alt="{{ site.title }}">
+            {% endif %}
+        </a>
+
+        <!-- Toggle navigation (tablet & mobile) -->
+        <button class="navbar__toggler">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Navigation -->
+        <ul class="navbar__nav">
+            {% for item in site.data.navbar.nav %}
+                {% if item.button %}
+                    <li class="navbar__nav-item navbar__nav-item--btn">
+                        <a class="navbar__nav-btn" href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                {% else %}
+                    {% if page.url == item.url %}
+                    <li class="navbar__nav-item navbar__nav-item--active">
+                    {% else %}
+                    <li class="navbar__nav-item">
+                    {% endif %}
+                        {% if item.dropdown[0] %}
+                            <a class="navbar__nav-link navbar__nav-link--dropdown" href="#">{{ item.title }}</a>
+                        {% else %}
+                            <a class="navbar__nav-link" href="{{ item.url }}">{{ item.title }}</a>
+                        {% endif %}
+                        {% if item.dropdown[0] %}
+                            <ul class="navbar__nav-dropdown">
+                                {% for entry in item.dropdown %}
+                                <li class="navbar__nav-dropdown-item">
+                                    <a class="navbar__nav-dropdown-link" href="{{ entry.url }}">{{ entry.page }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endif %}
+            {% endfor %} 
+        </ul>
+        <button class="navbar__switch navbar__switch--light" id="switchColorMode"></button>
+    </div>
+</nav>
