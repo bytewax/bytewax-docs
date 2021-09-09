@@ -2,7 +2,7 @@
 .btn{
     display:inline-block;
     font-weight:600;
-    font-family:$headingFont;
+    font-family:$mainFont;
     line-height:1;
     text-align:center;
     text-decoration:none;
@@ -11,20 +11,20 @@
     cursor:pointer;
     @include transition(.25s ease-in-out);
     &--lg{
-        padding:18px 30px 16px 30px;
+        padding:18px 30px;
         font-size:1.125em;
         border:1px solid;
         @include min-sm{
-            padding:18px 36px 16px 36px;
+            padding:18px 36px;
             font-size:1.11em;
         }
     }
     &--md{
-        padding:14px 27px 12px 27px;
+        padding:14px 27px;
         font-size:1em;
         border:1px solid;
         @include min-sm{
-            padding:15px 32px 13px 32px;
+            padding:15px 32px;
             font-size:.88em;
         }
     }

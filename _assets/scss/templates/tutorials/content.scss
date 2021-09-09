@@ -23,7 +23,7 @@
             color:$yellow;
             font-weight:600;
             font-size:.888em;
-            font-family:$headingFont;
+            font-family:$mainFont;
             line-height:150%;
             text-decoration:none;
             &::before{
@@ -149,9 +149,9 @@
             }
         }
         img{
-            margin-top:1em;
             max-width:100%;
             height:auto;
+            margin-top:1em;
         }
         strong{
             display:block;

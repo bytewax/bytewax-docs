@@ -175,8 +175,8 @@ body.dark-mode .tutorial{
         padding-top:12px;
         padding-bottom:1.5em;
         h1, h2, h3, h4, h5{
-            font-family:$bodyFont;
             font-weight:600;
+            font-family:$mainFont;
         }
         h1{
             font-size:1.5em;
@@ -196,8 +196,8 @@ body.dark-mode .tutorial{
     }
     &-stdout, 
     &-stderr {
-        white-space: pre-wrap;
         margin: 1em 0;
+        white-space: pre-wrap;
     }
     &-cell {
         position: relative;  
@@ -223,14 +223,14 @@ body.dark-mode .tutorial{
     }
     &-output:before, 
     &-input:before {
-        position: absolute;    
-        font-family: $codeFont;
-        color: rgba($black,.38);
-        text-align: right;
+        position: absolute;
+        top: .75em;
         left: -96px;
         width: 96px;
         padding-right:6px;
-        top: .75em;
+        color: rgba($black,.38);    
+        font-family: $codeFont;
+        text-align: right;
     }
     &-input:before {
         content: "In [" attr(data-prompt-number) "]:";
