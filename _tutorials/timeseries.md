@@ -18,7 +18,7 @@ notebooks:
   - url: tutorials/timeseries/forecast.ipynb
     name: forecast.ipynb
     id: forecast
-featured-image: assets/img/tutorials/forecasting.png
+featured-image: assets/images/tutorials/forecasting.png
 featured-image-alt: ARIMA Time Series Forecasting
 download-url: tutorials/timeseries/timeseries.zip
 ---

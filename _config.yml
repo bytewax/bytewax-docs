@@ -1,7 +1,6 @@
 # Global site settings
 title: bytewax
 url: https://docs.bytewax.io
-home_url: https://www.bytewax.io
 author: bytewax
 email: konrad@sienkowski.eu
 language: en
@@ -42,6 +41,10 @@ collections:
 defaults:
   - scope:
       path: 'assets/img'
+    values:
+      image: true-
+  - scope:
+      path: 'assets/images'
     values:
       image: true-
   - scope:

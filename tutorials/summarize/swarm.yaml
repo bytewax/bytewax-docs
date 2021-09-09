@@ -1,0 +1,15 @@
+---
+name: summarize
+bees:
+  - name: summarize-input-bee
+    type: gateway-input
+    spec:
+      name: summarize
+  - name: summarize
+    type: python
+    input:
+      name: summarize-input-bee
+    spec:
+      file: "/swarm/summarize.py"
+      bee: "summarize"
+      image: registry.bytewax.net/summarize:latest

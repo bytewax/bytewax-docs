@@ -2,7 +2,7 @@
 <nav class="navbar">
     <div class="navbar__container container">
         <!-- Brand -->
-        <a class="navbar__brand" href="{{ site.home_url }}">
+        <a class="navbar__brand" href="{{ '/' | relative_url}}">
             {% if site.logo %}
                 <img class="navbar__logo" src="{{ site.logo | relative_url}}" alt="{{ site.title }}">
             {% endif %}

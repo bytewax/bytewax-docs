@@ -14,7 +14,7 @@ Once a Bee's logic is executed, the bee can either publish data for the next Bee
 
 A collection of Bees make up a Swarm, they can be running sequentially or in parallel as shown in the diagram below.
 
-![Swarm architecture](/assets/img/docs/swarm_architecture.svg)
+![Swarm architecture](/assets/images/docs/swarm_architecture.svg)
 
 In a Swarm yaml, Bees will be defined by at least 3, but most likely 4 fields. These are the Bee definition and the fields will be at minimum:
 - `name`
@@ -156,6 +156,4 @@ At any point in the swarm, a Bee’s logic can dictate whether we need to exit t
 
 ## Writing a Custom Bee Type
 
-{% include alert.html type="info"
-  icon="error"
-  content="Coming Soon" %}
+{% include alert.html type="info" icon="error" content="Coming Soon" %}

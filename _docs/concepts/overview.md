@@ -9,7 +9,7 @@ Bytewax is a machine learning platform focused on processing data and serving ma
 
 Let’s unpack some of that language around Gateways, Swarms, and Bees. [Swarms](/swarms) are topologies of individual functions that are referred to as worker Bees or [Bees](/../concepts/bees) and [Gateways](/../concepts/gateways) are endpoints or data connectors used to send and receive data.
 
-![Swarm architecture](/assets/img/docs/swarm_architecture.svg)
+![Swarm architecture](/assets/images/docs/swarm_architecture.svg)
 
 To conceptualize this, you can think of data as flowing into a Gateway and then flowing through the Swarm with various steps (Bees) that change the data, send it down a different path in the Swarm or return the data through the Gateway.
 
@@ -40,7 +40,7 @@ Then reach out to the [Bytewax team](accounts@bytewax.io) to get a cluster set u
 ## Bytewax Architecture
 Coming back to our Swarm diagram again, We will go into depth into each one of the components shown below in the documentation.
 
-![Swarm architecture](/assets/img/docs/swarm_architecture.svg)
+![Swarm architecture](/assets/images/docs/swarm_architecture.svg)
 
 ### Bytewax Cluster
 

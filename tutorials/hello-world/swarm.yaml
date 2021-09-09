@@ -1,0 +1,26 @@
+
+name: hello-world
+bees:
+
+  - name: hello-world-input-bee
+    type: gateway-input
+    spec:
+      name: hello-world
+
+  - name: hello
+    type: python
+    input:
+      name: hello-world-input-bee
+    spec:
+      image: registry.bytewax.net/hello-world:latest
+      file: hello.py
+      bee: hello 
+      
+  - name: goodbye
+    type: python
+    input: 
+      name: hello
+    spec:
+      image: registry.bytewax.net/hello-world:latest
+      file: hello.py
+      bee: goodbye

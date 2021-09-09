@@ -17,7 +17,7 @@ snippets:
   - url: tutorials/summarize/shell_commands.sh
     name: shell_commands.sh
     id: shell-commands
-featured-image: assets/img/tutorials/nlp-processing.png
+featured-image: assets/images/tutorials/nlp-processing.png
 featured-image-alt: NLP Quickstart
 download-url: tutorials/summarize/summarize.zip
 ---

@@ -39,7 +39,7 @@ The last argument is the context and is used internally to pass metadata through
 
 In this example the only logic in our `hello` Bee is that we will print the `payload`. The print statement can be found in the bee logs in the dashboard or via the cli like shown below.
 
-![Bee Logs](/assets/img/docs/logs.png)
+![Bee Logs](/assets/images/docs/logs.png)
 
 #### Publishing
 

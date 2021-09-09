@@ -1,0 +1,25 @@
+---
+name: time-series
+bees:
+  - name: forecast-input
+    type: gateway-input
+    spec:
+      name: forecast
+
+  - name: data-prep
+    type: python
+    input:
+      name: forecast-input
+    spec:
+      image: registry.bytewax.net/forecast:latest
+      file: forecast.ipynb
+      bee: data-prep
+  
+  - name: arima
+    type: python
+    input:
+      name: data-prep
+    spec:
+      image: registry.bytewax.net/forecast:latest
+      file: forecast.ipynb
+      bee: arima

@@ -1,0 +1,75 @@
+name: teddy-bear-detector
+bees:
+
+  - name: teddy-input-bee
+    type: gateway-input
+    spec:
+      name: teddybear-detector-gateway
+
+  - name: preprocess-images
+    type: container
+    input:
+      name: teddy-input-bee
+    spec:
+      image: localhost:32000/preprocess-teddy:latest
+      command: ["python", "/swarm/preprocess-teddy.py"]
+
+  - name: microbatching-requests
+    type: batch
+    input:
+      name: preprocess-images
+    spec:
+      batch_size: 10
+      timeout_seconds: 0.1
+
+  - name: inference-tensorflow
+    type: tf-serving
+    input:
+      name: microbatching-requests
+    spec:
+      model: s3://bytewax/teddy-bear-detector.pb
+  
+  - name: inference-pytorch
+    type: tensor-rt
+    gpu: 1
+    input:
+      name: microbatching-requests
+    spec:
+      model: s3://bytewax/teddy-bear-detector.onnx
+  
+  - name: inference-svm
+    type: container
+    input:
+      name: microbatching-requests
+    spec:
+      container: localhost:32000/scikit-teddy:latest
+      command: ["python", "/swarm/scikit-teddy-svm.py"]
+  
+  - name: generate-prediction-from-ensemble
+    type: weighted-average-ensemble
+    input:
+      join:
+        - inference-tensorflow
+        - inference-pytorch
+        - inference-svm
+  
+  - name: respond-to-user
+    type: respond
+    input:
+      name: generate-prediction-from-ensemble
+  
+  - name: log-prediciton-for-retraining
+    type: save-to-database
+    input:
+      stack:
+        - inference-tensorflow
+        - inference-pytorch
+        - inference-svm
+    spec:
+      table: inferences
+        
+        
+  
+
+
+      

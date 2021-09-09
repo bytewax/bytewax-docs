@@ -1,5 +1,5 @@
 # Cookie consent settings
-  display: false
+  display: true
   # How many days takes for cookie of the popup to reset  
   expire: 28 
   content: > 

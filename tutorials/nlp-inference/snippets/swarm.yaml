@@ -1,0 +1,23 @@
+name: ghtop-inference
+bees:
+
+  - name: input-bee
+    type: gateway-input
+    spec:
+      name: ghtop-inference
+
+  - name: make-tokens
+    type: container
+    input:
+      name: input-bee
+    spec:
+      image: localhost:32000/make-tokens:latest
+      command: ["python", "-m", "bytewax.swarm.runner", "/swarm/make_tokens.py", "make-tokens"]
+
+  - name: predict
+    type: container
+    input:
+      name: make-tokens
+    spec:
+      image: localhost:32000/process:latest
+      command: ["python", "-m", "bytewax.swarm.runner", "/swarm/predict.py", "predict"]

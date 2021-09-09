@@ -6,7 +6,7 @@ order: 2
 
 A Swarm is a collection of processing steps organized into a directed acyclic graph (DAG) made up of [Bees](../bees). The Swarm is defined in a declarative YAML file and the structure of the DAG is determined by the input field for each bee.
 
-![Swarm architecture](/assets/img/docs/swarm_architecture.svg)
+![Swarm architecture](/assets/images/docs/swarm_architecture.svg)
 
 Each Bee does not have any information of the Swarm it is running in, but is passed the
 Swarm context via a Swarm object. When a user is running a Swarm on Bytewax this uses the Swarm() class and if the user is developing locally, this will use the DevSwarm() class.

@@ -23,6 +23,6 @@ hello Zander
 
 If I wanted to monitor my swarm from the dashboard I would click into my individual swarm and then I could see the logs, status, resource visualizations etc.
 
-![Individual Bee](/assets/img/docs/logs.png)
+![Individual Bee](/assets/images/docs/logs.png)
 
 🐝 Congratulations! 🐝 We've successfully created and deployed our first Swarm, sent a request to it for processing and used the various methods available for troubleshooting, monitoring and debugging.
