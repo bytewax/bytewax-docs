@@ -10,8 +10,6 @@ nav:
       url: /
     - page: Tutorials
       url: /tutorials/
-    - page: Slack channel
-      url: https://bytewaxcommunity.slack.com/
   button: false
 
 - title: Contact Us

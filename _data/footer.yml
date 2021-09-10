@@ -1,11 +1,6 @@
 copyright: Copyright 2021 by Bytewax, Inc. All rights reserved
 
 widgets:
-  - title: About
-    nav: 
-      - page: Contact Us
-        url: https://www.bytewax.io/contact-us/
-
   - title: Resources
     nav: 
       - page: Documentation
@@ -16,6 +11,4 @@ widgets:
   - title: Legal
     nav: 
       - page: Privacy policy
-        url: https://www.bytewax.io/privacy-policy/
-      - page: Terms of use
-        url: https://www.bytewax.io/terms-of-use/
+        url: /privacy-policy/

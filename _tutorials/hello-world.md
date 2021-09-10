@@ -20,7 +20,7 @@ snippets:
   - url: tutorials/hello-world/shell_commands.sh
     name: shell_commands.sh
     id: shell-commands
-featured-image: assets/images/tutorials/hello-world.png
+featured-image: tutorials/hello-world/hello-world.png
 featured-image-alt: Hello World
 download-url: tutorials/hello-world/hello-world.zip
 ---
