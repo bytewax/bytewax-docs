@@ -145,6 +145,17 @@ That [Block IAL](https://kramdown.gettalong.org/syntax.html#block-ials) line, wr
 
 Static files (e.g. images) are located in `assets` folder. You can put there your files and then link to their path using `assets/your filename.ext`.
 
+## Plugins
+
+Theme uses following plugins / libraries:
+- [Prism](https://prismjs.com/) for syntax highlighting,
+- [Marked](https://marked.js.org/) as a markdown parser & compiler,
+- [Notebook.js](https://github.com/jsvine/notebookjs) for rendering Jupyter Notebooks,
+- [Simple Jekyll Search](https://github.com/christian-fei/Simple-Jekyll-Search) to add search functionality,
+- [jQuery Scrollspy](https://github.com/sxalexander/jquery-scrollspy) to add scrollspy function (used in docs template),
+- [jQuery](https://jquery.com/) to simplify all actions performed on DOM,
+- [stylelint](https://stylelint.io/) & [stylelint-config-rational-order](https://www.npmjs.com/package/stylelint-config-rational-order) to make SASS code cleaner & better readable.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.

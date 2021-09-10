@@ -1,7 +1,7 @@
 ---
 title: Sample article
 category: Sample category
-order: 1
+order: -1
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut mauris eu est ultricies congue at id ante. Nam sodales finibus bibendum. Ut sit amet nunc sem.
