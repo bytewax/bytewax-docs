@@ -44,6 +44,11 @@ defaults:
     values:
       image: true-
   - scope:
+      type: pages
+      path: _pages
+    values:
+      is_post: false
+  - scope:
       type: docs
       path: _docs
     values:
@@ -68,6 +73,8 @@ exclude:
   - gemfiles/
   - Gemfile
   - Gemfile.lock
+  - bytewax-docs.gemspec
+  - bytewax-docs-0.1.0.gem
   - node_modules/
   - gulpfile.js
   - README.md
@@ -75,5 +82,3 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - bytewax-docs.gemspec
-  - bytewax-docs-0.1.0.gem

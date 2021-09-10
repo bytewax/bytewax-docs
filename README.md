@@ -8,6 +8,8 @@ Updating the content requires basic knowledge of [Markdown](https://www.markdown
 
 ## Installation
 
+### Using as a gem-based theme
+
 Add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
@@ -27,6 +29,12 @@ And then execute:
 Or install it yourself as:
 
     $ gem install bytewax-docs
+
+### Using as a regular theme (recommended)
+
+You can both [convert gem-based theme](https://jekyllrb.com/docs/themes/#converting-gem-based-themes-to-regular-themes) or simply copy all theme files into your Jekyll site directory.
+
+> **Note:** customizing a theme may require all its files, which are not included in site's directory while using gem-based theme. 
 
 ## Configuration
 
