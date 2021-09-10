@@ -1,5 +1,7 @@
 # bytewax-docs
 
+![bytewax-docs theme screenshot](screenshot.png "bytewax-docs theme")
+
 Jekyll theme originally built for [Bytewax Docs](https://docs.bytewax.io/).
 
 Updating the content requires basic knowledge of [Markdown](https://www.markdownguide.org/getting-started/). If you want also to modify theme style or behaviour, you'll need to use [SCSS](https://sass-lang.com/), [jQuery](https://jquery.com/) & [Liquid](https://jekyllrb.com/docs/liquid/).
