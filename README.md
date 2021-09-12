@@ -1,6 +1,6 @@
 # bytewax-docs
 
-![bytewax-docs theme screenshot](screenshot.png "bytewax-docs theme")
+![bytewax-docs theme for jekyll](thumbnail.png "bytewax-docs theme")
 
 Jekyll theme originally built for [Bytewax Docs](https://docs.bytewax.io/).
 
