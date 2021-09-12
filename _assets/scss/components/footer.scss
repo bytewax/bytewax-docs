@@ -4,23 +4,23 @@
     &__container{
         padding-top:64px;
         padding-bottom:48px;
-        @include min-sm{
+        @include media-min($sm){
             padding-top:72px;
             padding-bottom:96px;
         }
-        @include min-xxl{
+        @include media-min($xxl){
             padding-top:96px;
             padding-bottom:136px;
         }
     }
     &__logo{
         display:none;
-        @include min-sm{
+        @include media-min($sm){
             display:block;
             height:44px;
             margin:0 auto;
         }
-        @include min-lg{
+        @include media-min($lg){
             margin:0 0 18px 0;
         }
         &--mono{
@@ -28,7 +28,7 @@
             height:40px;
             margin:0 auto 12px auto;
             @include opacity(.24);
-            @include min-sm{
+            @include media-min($sm){
                 display:none;
             }
         }
@@ -46,7 +46,7 @@
         line-height:22px;
         text-align:center;
         border-top:1px solid rgba($black,.12);
-        @include min-lg{
+        @include media-min($lg){
             order:1;
             width:auto;
             max-width:33.3%;
@@ -55,14 +55,14 @@
             text-align:left;
             border-top:0;
         }
-        @include min-xxl{
+        @include media-min($xxl){
             max-width:none;
         }
     }
     &__widget{
         margin:0 auto;
         text-align:center;
-        @include min-lg{
+        @include media-min($lg){
             margin:0 64px;
             text-align:left;
         }
@@ -70,38 +70,38 @@
             margin-bottom:.75em;
             font-weight:600;
             font-size:1.125em;
-            @include min-sm{
+            @include media-min($sm){
                 font-size:1em;
             }
         }
         &--about{
             width:50%;
             margin-bottom:48px;
-            @include min-sm{
+            @include media-min($sm){
                 width:auto;
                 margin-bottom:0;
             }
-            @include min-lg{
+            @include media-min($lg){
                 order:2;
             }
         }
         &--resources{
             width:50%;
             margin-bottom:48px;
-            @include min-sm{
+            @include media-min($sm){
                 width:auto;
                 margin-bottom:0;
             }
-            @include min-lg{
+            @include media-min($lg){
                 order:3;
             }
         }
         &--legal{
             width:100%;
-            @include min-sm{
+            @include media-min($sm){
                 width:auto;
             }
-            @include min-lg{
+            @include media-min($lg){
                 order:4;
                 margin-right:36px;
             }
@@ -129,7 +129,7 @@ body.dark-mode .footer{
     &__copyright{
         color:rgba($white,.38);
         border-top:1px solid rgba($white,.06);
-        @include min-lg{
+        @include media-min($lg){
             border-top:0;
         }
     }
@@ -142,11 +142,11 @@ body.dark-mode .footer{
             display:block;
             height:40px;
             margin:0 auto 12px auto;
-            @include min-sm{
+            @include media-min($sm){
                 height:44px;
                 margin:0 auto;
             }
-            @include min-lg{
+            @include media-min($lg){
                 margin:0 0 18px 0;
             }
         }

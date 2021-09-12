@@ -4,20 +4,20 @@
         position:relative;
         padding-top:12px;
         padding-bottom:48px;
-        @include min-sm{
+        @include media-min($sm){
             padding-top:24px;
             padding-bottom:72px;
         }
-        @include min-lg{
+        @include media-min($lg){
             padding-bottom:120px;
         }
     }
     &__intro{
         margin-bottom:36px;
-        @include min-sm{
+        @include media-min($sm){
             margin-bottom:48px;
         }
-        @include min-lg{
+        @include media-min($lg){
             margin-bottom:54px;
         }
         &-title{
@@ -27,7 +27,7 @@
     }
     &__archive{
         margin:0 -18px;
-        @include min-lg{
+        @include media-min($lg){
             margin:0 -24px;
         }
     }
@@ -51,7 +51,7 @@
         &-title{
             margin-bottom:8px;
             font-weight:600;
-            @include min-sm{
+            @include media-min($sm){
                 margin-bottom:12px;
             }
         }
@@ -64,23 +64,22 @@
             text-decoration:none;
             &::after{
                 display:inline-block;
-                font-size:24px;
                 vertical-align:-7px;
                 content:"arrow_right";
-                @include material-icons;
+                @include material-icons(24px);
             }
         }
         &--featured{
             flex-direction:column;
             width:100%;
             margin:0 18px 48px 18px;
-            @include min-sm{
+            @include media-min($sm){
                 width:calc(50% - 36px);
                 margin:0 18px 64px 18px;
                 padding-bottom:36px;
                 border-bottom:1px solid rgba($black,.12);
             }
-            @include min-lg{
+            @include media-min($lg){
                 width:calc(50% - 48px);
                 margin:0 24px 64px 24px;
             }
@@ -89,10 +88,10 @@
             height:210px;
             margin-bottom:27px;
             border-radius:12px;
-            @include min-lg{
+            @include media-min($lg){
                 height:270px;
             }
-            @include min-xxl{
+            @include media-min($xxl){
                 height:320px;
             }
             &-img{
@@ -109,10 +108,10 @@
             align-items:center;
             width:100%;
             margin:0 18px 27px 18px;
-            @include min-sm{
+            @include media-min($sm){
                 margin:0 18px 36px 18px;
             }
-            @include min-lg{
+            @include media-min($lg){
                 width:calc(50% - 48px);
                 margin:0 24px 36px 24px;
             }
@@ -122,16 +121,16 @@
             height:150px;
             margin-right:24px;
             border-radius:8px;
-            @include min-sm{
+            @include media-min($sm){
                 min-width:33.3%;
                 height:100%;
                 margin-right:36px;
             }
-            @include min-lg{
+            @include media-min($lg){
                 min-width:40%;
                 border-radius:10px;
             }
-            @include min-xxl{
+            @include media-min($xxl){
                 min-width:33.3%;
             }
             &-img{
@@ -140,18 +139,18 @@
             }
         }
         &--archive &-content{
-            @include min-sm{
+            @include media-min($sm){
                 padding:18px 0;
             }
         }
         &--archive &-title{
-            @include min-sm{
+            @include media-min($sm){
                 margin-bottom:6px;
             }
         }
         &--archive &-excerpt{
             display:none;
-            @include min-sm{
+            @include media-min($sm){
                 display:block;
                 margin-bottom:12px;
                 font-size:16px;
@@ -165,7 +164,7 @@
 body.dark-mode .tutorials{
     &__post{
         &--featured{
-            @include min-sm{
+            @include media-min($sm){
                 border-bottom:1px solid rgba($white,.12);
             }
         }

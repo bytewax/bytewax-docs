@@ -37,8 +37,9 @@
 }
 
 /** Material Icons mixin **/
-@mixin material-icons{
+@mixin material-icons($size){
     font-weight: normal;
+    font-size: $size;
     font-family: 'Material Icons';
     font-style: normal;
     line-height: 1;
@@ -51,84 +52,14 @@
     -webkit-font-smoothing: antialiased;
 }
 
-/** Media queries **/
-@mixin min-1600 {
-    @media only screen and (min-width: 1600px) {
+/** Media queries (use with breakpoints from 'variables.scss' */
+@mixin media-min($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
         @content;
     }
 }
-@mixin max-1600 {
-    @media only screen and (max-width: 1600px) {
-        @content;
-    }
-}
-@mixin min-1440 {
-    @media only screen and (min-width: 1440px) {
-        @content;
-    }
-}
-@mixin max-1440 {
-    @media only screen and (max-width: 1440px) {
-        @content;
-    }
-}
-@mixin min-xxl {
-    @media only screen and (min-width: 1280px) {
-        @content;
-    }
-}
-@mixin max-xxl {
-    @media only screen and (max-width: 1280px) {
-        @content;
-    }
-}
-@mixin min-xl {
-    @media only screen and (min-width: 1024px) {
-        @content;
-    }
-}
-@mixin max-xl {
-    @media only screen and (max-width: 1024px) {
-        @content;
-    }
-}
-@mixin min-lg {
-    @media only screen and (min-width: 992px) {
-        @content;
-    }
-}
-@mixin max-lg {
-    @media only screen and (max-width: 992px) {
-        @content;
-    }
-}
-@mixin min-md {
-    @media only screen and (min-width: 768px) {
-        @content;
-    }
-}
-@mixin max-md {
-    @media only screen and (max-width: 768px) {
-        @content;
-    }
-}
-@mixin min-sm {
-    @media only screen and (min-width: 576px) {
-        @content;
-    }
-}
-@mixin max-sm {
-    @media only screen and (max-width: 576px) {
-        @content;
-    }
-}
-@mixin min-xs {
-    @media only screen and (min-width: 320px) {
-        @content;
-    }
-}
-@mixin max-xs {
-    @media only screen and (max-width: 320px) {
+@mixin media-max($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
         @content;
     }
 }

@@ -1,7 +1,7 @@
 /** UI Components -- Article **/
 .article{
     text-align:center;
-    @include min-sm{
+    @include media-min($sm){
         text-align:left;
     }
     &__thumbnail{
@@ -10,10 +10,10 @@
         margin:0;
         overflow:hidden;
         border-radius:10px;
-        @include min-sm{
+        @include media-min($sm){
             height:210px;
         }
-        @include min-xxl{
+        @include media-min($xxl){
             height:240px;
         }
         &-img{
@@ -35,7 +35,7 @@
         padding-bottom:18px;
         font-size:0.777em;
         border-bottom:1px solid rgba($black,.12);
-        @include min-sm{
+        @include media-min($sm){
             display:flex;
         }
         &-author{
@@ -65,7 +65,7 @@
         margin:24px 0 8px 0;
         color:$black;
         font-weight:600;
-        @include min-sm{
+        @include media-min($sm){
             margin:27px 0 12px 0;
         }
     }
@@ -77,7 +77,7 @@
         margin-bottom:24px;
         font-size:0.875em;
         line-height:160%;
-        @include min-sm{
+        @include media-min($sm){
             margin-bottom:27px;
             font-size:0.888em;
             line-height:165%;
@@ -92,10 +92,9 @@
         text-decoration:none;
         &::after{
             display:inline-block;
-            font-size:24px;
             vertical-align:-7px;
             content:"arrow_right";
-            @include material-icons;
+            @include material-icons(24px);
         }
     }
     &__footer{
@@ -104,13 +103,13 @@
         flex-wrap:wrap;
         align-items:center;
         justify-content:center;
-        @include min-sm{
+        @include media-min($sm){
             justify-content:space-between;
         }
     }
     &__info{
         display:none;
-        @include min-sm{
+        @include media-min($sm){
             display:inline-block;
             color:rgba($black,.38);
             font-size:0.77em;

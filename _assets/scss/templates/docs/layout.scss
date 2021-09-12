@@ -3,18 +3,18 @@
     &__container{
         padding-top:12px;
         padding-bottom:64px;
-        @include min-sm{
+        @include media-min($sm){
             padding-top:24px;
             padding-bottom:96px;
         }
-        @include min-lg{
+        @include media-min($lg){
             padding-bottom:150px;
         }
     }
     &__row{
         position:relative;
         align-items:flex-start;
-        @include min-sm{
+        @include media-min($sm){
             flex-wrap:nowrap;
         }
     }

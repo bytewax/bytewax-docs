@@ -2,11 +2,11 @@
 .tutorial{
     &__content{
         width:100%;
-        @include min-lg{
+        @include media-min($lg){
             width:calc(50% - 24px);
             margin:0 auto 0 0;
         }
-        @include min-xxl{
+        @include media-min($xxl){
             width:calc(40% - 24px);
         }
     }
@@ -14,7 +14,7 @@
         margin-bottom:36px;
         padding-bottom:27px;
         border-bottom:1px solid rgba($black,.12);
-        @include min-sm{
+        @include media-min($sm){
             margin-bottom:48px;
             padding-bottom:36px;
         }
@@ -32,7 +32,7 @@
                 line-height:1;
                 vertical-align:-7px;
                 content:"arrow_left";
-                @include material-icons;
+                @include material-icons(24px);
             }
         }
     }
@@ -41,7 +41,7 @@
         color:$black;
         font-weight:600;
         font-size:1.5em;
-        @include min-sm{
+        @include media-min($sm){
             font-size:1.77em;
         }
     }
@@ -53,13 +53,13 @@
         flex-direction:row;
         flex-wrap:wrap;
         margin-top:27px;
-        @include min-xxl{
+        @include media-min($xxl){
             margin-top:36px;
         }
         .btn{
             margin-right:12px;
             margin-bottom:8px;
-            @include min-xxl{
+            @include media-min($xxl){
                 margin-bottom:0;
             }
         }
@@ -72,7 +72,7 @@
             color:$black;
             font-weight:600;
             font-size:1.5em;
-            @include min-sm{
+            @include media-min($sm){
                 font-size:1.77em;
             }
         }
@@ -82,7 +82,7 @@
             font-weight:600;
             font-size:1.3125em;
             line-height:135%;
-            @include min-sm{
+            @include media-min($sm){
                 margin:2em 0 .25em 0;
                 font-size:1.33em;
             }
@@ -110,7 +110,7 @@
             margin:1.5em 0 1em 0;
             font-weight:600;
             font-size:1em;
-            @include min-sm{
+            @include media-min($sm){
                 font-size:1.166em;
             }
         }
@@ -123,7 +123,7 @@
             border-left:3px solid transparent;
             cursor:pointer;
             @include transition(.25s ease-in-out);
-            @include min-sm{
+            @include media-min($sm){
                 font-size:16px;
                 line-height:28px;
             }
@@ -165,17 +165,16 @@
                 margin:0 0 8px 0;
                 font-size:14px;
                 line-height:24px;
-                @include min-sm{
+                @include media-min($sm){
                     margin:0 0 12px 0;
                     font-size:16px;
                     line-height:28px;
                 }
             }
             li::before{
-                @include material-icons;
+                @include material-icons(24px);
                 margin:0 6px 0 -30px;
                 color:rgba($black,.38);
-                font-size:24px;
                 vertical-align:-7px;
                 content:"chevron_right";
             }

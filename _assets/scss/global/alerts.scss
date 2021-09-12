@@ -1,13 +1,13 @@
 /** Alert styling **/
 .alert{
+    position:relative;
     margin:24px 0;
     padding:16px 24px 16px 30px;
     border-left:4px solid;
-    position:relative;
-    @include min-sm{
+    @include media-min($sm){
+        padding:16px 27px 16px 32px;
         font-size:16px;
         line-height:28px;
-        padding:16px 27px 16px 32px;
     }
     a{  
         font-weight:600;
@@ -17,19 +17,17 @@
         }
     }
     &__icon{
-        @include material-icons;
+        @include material-icons(18px);
         position:absolute;
-        z-index:1;
-        left:-18px;
         top:14px;
+        left:-18px;
+        z-index:1;
         display:inline-block;
         width:32px;
         height:32px;
-        font-size:18px;
-        line-height:18px;
         padding:7px;
-        border-radius:50%;
         color: $white;
+        border-radius:50%;
     }
     &__content{
         margin:0;

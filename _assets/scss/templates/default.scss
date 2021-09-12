@@ -1,7 +1,7 @@
 /** Default **/
 .default{
     padding-top:92px;
-    @include min-lg{
+    @include media-min($lg){
         padding-top:126px;
     }
     &__container{
@@ -9,11 +9,11 @@
         margin:0 auto;
         padding-top:12px;
         padding-bottom:64px;
-        @include min-sm{
+        @include media-min($sm){
             padding-top:24px;
             padding-bottom:96px;
         }
-        @include min-lg{
+        @include media-min($lg){
             padding-top:36px;
             padding-bottom:120px;
         }
@@ -29,7 +29,7 @@
             font-weight:600;
             font-size:1.3125em;
             line-height:135%;
-            @include min-sm{
+            @include media-min($sm){
                 font-size:1.33em;
             }
             &:first-of-type{
@@ -39,7 +39,7 @@
         h3{
             margin:1.5em 0 .5em 0;
             font-weight:600;
-            @include min-sm{
+            @include media-min($sm){
                 font-size:1.166em;
             }
         }
@@ -50,7 +50,7 @@
             margin:0 0 1em 0;
         }
         p, li, pre, code{
-            @include min-sm{
+            @include media-min($sm){
                 font-size:16px;
                 line-height:28px;
             }
@@ -63,10 +63,9 @@
                 margin:0 0 .5em 0;
             }
             li::before{
-                @include material-icons;
+                @include material-icons(24px);
                 margin:0 6px 0 -30px;
                 color:rgba($black,.38);
-                font-size:24px;
                 vertical-align:middle;
                 content:"chevron_right";
             }

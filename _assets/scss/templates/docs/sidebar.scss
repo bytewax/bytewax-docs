@@ -5,7 +5,7 @@
         margin-bottom:36px;
         padding-bottom:24px;
         border-bottom:1px solid rgba($black,.12);
-        @include min-sm{
+        @include media-min($sm){
             position:sticky;
             top:128px;
             min-width:240px;
@@ -14,7 +14,7 @@
             padding-bottom:0;
             border-bottom:0;
         }
-        @include min-lg{
+        @include media-min($lg){
             min-width:300px;
             max-width:300px;
         }
@@ -22,17 +22,16 @@
     &__search{
         position:relative;
         margin-bottom:18px;
-        @include min-sm{
+        @include media-min($sm){
             margin-bottom:24px;
         }
         &::before{
             position:absolute;
             top:12px;
             left:12px;
-            font-size:24px;
             content:"search";
-            @include material-icons;
-            @include min-sm{
+            @include material-icons(24px);
+            @include media-min($sm){
                 top:15px;
                 left:15px;
             }
@@ -46,7 +45,7 @@
             border-radius: 0;
             outline:none;
             @include placeholder(rgba($black,.6));
-            @include min-sm{
+            @include media-min($sm){
                 height:54px;
                 padding-left:50px;
                 font-size:.888em;
@@ -80,7 +79,7 @@
             border:1px solid rgba($black,.12);
             border-top:0;
             box-shadow: 0 3px 9px rgba($black,0.18);
-            @include min-sm{
+            @include media-min($sm){
                 font-size:.777em;
                 line-height:150%;
             }
@@ -116,7 +115,7 @@
             font-size:1.125em;
             font-family:$mainFont;
             cursor:pointer;
-            @include min-sm{
+            @include media-min($sm){
                 padding:9px 0;
                 font-size:1em;
             }
@@ -124,11 +123,10 @@
                 display:inline-block;
                 margin-right:8px;
                 color:$yellow;
-                font-size:24px;
                 vertical-align:-6px;
                 transform:rotate(-90deg);
                 content:"expand_more";
-                @include material-icons;
+                @include material-icons(24px);
                 @include transition(transform .25s ease-in-out);
             }
         }
@@ -153,7 +151,7 @@
                 text-decoration:none;
                 border-left:3px solid transparent;
                 @include transition(.25s ease-in-out);
-                @include min-sm{
+                @include media-min($sm){
                     font-size:.888em;
                 }
             }
@@ -166,9 +164,8 @@
                 right:8px;
                 display:inline-block;
                 color:rgba($black,.38);
-                font-size:20px;
                 content:"open_in_new";
-                @include material-icons;
+                @include material-icons(20px);
             }
             &-item--active &-link{
                 color:rgba($black,.87);

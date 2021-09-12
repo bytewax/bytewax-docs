@@ -2,14 +2,14 @@
 .docs{
     &__content{
         width:100%;
-        @include min-sm{
+        @include media-min($sm){
             max-width:calc(100% - 288px);
             margin:0 0 0 48px;
         }
-        @include min-lg{
+        @include media-min($lg){
             max-width:calc(100% - 348px);
         }
-        @include min-xxl{
+        @include media-min($xxl){
             max-width:680px;
             margin:0 64px 0 72px;
         }
@@ -18,7 +18,7 @@
             color:$black;
             font-weight:600;
             font-size:1.5em;
-            @include min-sm{
+            @include media-min($sm){
                 font-size:1.77em;
             }
         }
@@ -28,7 +28,7 @@
             font-weight:600;
             font-size:1.3125em;
             line-height:135%;
-            @include min-sm{
+            @include media-min($sm){
                 font-size:1.33em;
             }
             &:first-of-type{
@@ -38,12 +38,12 @@
         h3{
             margin:2em 0 .5em 0;
             font-weight:600;
-            @include min-sm{
+            @include media-min($sm){
                 font-size:1.166em;
             }
         }
         p, li{
-            @include min-sm{
+            @include media-min($sm){
                 font-size:16px;
                 line-height:28px;
             }
@@ -57,7 +57,7 @@
             }
         }
         pre, code{
-            @include min-sm{
+            @include media-min($sm){
                 font-size:16px;
                 line-height:28px;
             }
@@ -73,10 +73,9 @@
                 margin:.1em 0;
             }
             li::before{
-                @include material-icons;
+                @include material-icons(24px);
                 margin:0 6px 0 -30px;
                 color:rgba($black,.38);
-                font-size:24px;
                 vertical-align:middle;
                 content:"chevron_right";
             }

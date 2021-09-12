@@ -16,7 +16,7 @@
         padding-top:24px;
         padding-bottom:24px;
         @include transition(.25s ease-in-out);
-        @include min-lg{
+        @include media-min($lg){
             flex-wrap:nowrap;
             min-height:126px;
             padding-top:0;
@@ -24,27 +24,27 @@
         }
     }
     &__brand{
-        @include max-lg{
+        @include media-max($lg){
             order:1;
         }
     }
     &__logo{
         display:block;
         height:44px;
-        @include min-sm{
+        @include media-min($sm){
             height:54px;
         }
         &--yellow{
             display:none;
             height:44px;
-            @include min-sm{
+            @include media-min($sm){
                 height:54px;
             }
         }
         &--dark{
             display:none;
             height:44px;
-            @include min-sm{
+            @include media-min($sm){
                 height:54px;
             }
         }
@@ -59,10 +59,10 @@
         border:0px;
         border-radius:0px;
         outline: 0;
-        @include max-lg{
+        @include media-max($lg){
             order:3;
         }
-        @include min-lg{
+        @include media-min($lg){
             display:none;
         }
         span{
@@ -113,10 +113,10 @@
         min-height:calc(100vh - 92px);
         padding:0;
         list-style-type:none;
-        @include max-lg{
+        @include media-max($lg){
             order:4;
         }
-        @include min-lg{
+        @include media-min($lg){
             display:flex;
             flex-direction:row;
             justify-content:flex-end;
@@ -127,14 +127,14 @@
             position:relative;
             margin:18px 0;
             line-height:135%;
-            @include min-lg{
+            @include media-min($lg){
                 margin:0 24px;
             }
-            @include min-xxl{
+            @include media-min($xxl){
                 margin:0 36px;
             }
             &:last-of-type{
-                @include min-lg{
+                @include media-min($lg){
                     margin-right:0;
                 }
             }
@@ -145,20 +145,19 @@
             font-size:1.25em;
             font-family:$mainFont;
             text-decoration:none;
-            @include min-lg{
+            @include media-min($lg){
                 color:$black;
                 font-size:1em;
             }
             &--dropdown::after{
                 display:inline-block;
                 color:rgba($black,.24);
-                font-size:24px;
                 vertical-align:middle;
                 transform:rotate(0deg);
                 content:"arrow_drop_down";
                 @include transition(.25s ease-in-out);
-                @include material-icons;
-                @include min-lg{
+                @include material-icons(24px);
+                @include media-min($lg){
                     color:$yellow;
                 }
             }
@@ -168,7 +167,7 @@
         }
         &-item--active &-link{
             color:$black;
-            @include min-lg{
+            @include media-min($lg){
                 color:$yellow;
             }
         }
@@ -176,7 +175,7 @@
             display:none;
             padding:12px 0 0 0;
             list-style-type:none;
-            @include min-lg{
+            @include media-min($lg){
                 position:absolute;
                 top:48px;
                 left:-24px;
@@ -188,7 +187,7 @@
                 margin:12px 0;
                 line-height:135%;
                 text-align:center;
-                @include min-lg{
+                @include media-min($lg){
                     margin:10px 0;
                     text-align:left;
                 }
@@ -199,7 +198,7 @@
                 font-size:1.25em;
                 font-family:$mainFont;
                 text-decoration:none;
-                @include min-lg{
+                @include media-min($lg){
                     color:$white;
                     font-size:1em;
                 }
@@ -213,7 +212,7 @@
                 border-style: solid;
                 border-width: 0 5px 5px 5px;
                 content:"";
-                @include min-lg{
+                @include media-min($lg){
                     display:inline-block;
                 }
             }
@@ -228,7 +227,7 @@
             text-decoration:none;
             background:$black;
             border:1px solid $black;
-            @include min-lg{
+            @include media-min($lg){
                 padding:14px 24px 14px 30px;
                 font-size:1em;
                 background:$yellow;
@@ -240,7 +239,7 @@
                 margin:0 0 0 2px;
                 vertical-align:-4px;
                 content:"arrow_right";
-                @include material-icons;
+                @include material-icons(24px);
             }
             &:hover, &:focus{
                 color:$white;
@@ -265,7 +264,7 @@
         box-shadow:0px 3px 9px rgba($black,.12);
     }
     &--scroll &__container{
-        @include min-lg{
+        @include media-min($lg){
             min-height:96px;
         }
     }
@@ -282,10 +281,10 @@
         outline:none;
         cursor:pointer;
         @include transition(background-color .25s ease-in-out);
-        @include max-lg{
+        @include media-max($lg){
             order:2;
         }
-        @include min-lg{
+        @include media-min($lg){
             margin-left:54px;
         }
         &::before{
@@ -293,10 +292,9 @@
             top:-9px;
             left:0;
             padding:6px;
-            font-size:18px;
             border-radius:50%;
             box-shadow:0px 1px 2px rgba($black,.24);
-            @include material-icons;
+            @include material-icons(18px);
             @include transition(transform .25s ease-in-out);
         }
         &--light{
@@ -330,7 +328,7 @@ body.dark-mode .navbar{
     }
     &__nav{
         &-link{
-            @include min-lg{
+            @include media-max($lg){
                 color:$white;
             }
         }

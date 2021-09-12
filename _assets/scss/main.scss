@@ -2,19 +2,16 @@
 @import 'global/normalize';
 @import 'global/fonts';
 @import 'global/mixins';
-@import 'global/animate';
 @import 'global/variables';
 @import 'global/typography';
 @import 'global/buttons';
 @import 'global/layout';
-@import 'global/slick';
 @import 'global/prism';
 @import 'global/alerts';
 
 /** Import components (reusable modules) files **/
 @import 'components/navbar';
 @import 'components/article';
-@import 'components/newsletter';
 @import 'components/footer';
 @import 'components/cookie-consent';
 

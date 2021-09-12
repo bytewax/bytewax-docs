@@ -2,7 +2,7 @@
 .docs{
     &__toc{
         display:none;
-        @include min-xxl{
+        @include media-min($xxl){
             position:sticky;
             top:128px;
             display:block;

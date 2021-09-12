@@ -5,12 +5,12 @@
         padding-top:24px;
         font-size:14px;
         line-height:22px;
-        @include min-sm{
+        @include media-min($sm){
             padding-top:36px;
             font-size:16px;
             line-height:28px;
         }
-        @include min-lg{
+        @include media-min($lg){
             position:sticky;
             top:126px;
             left:0;
@@ -18,7 +18,7 @@
             margin:0 0 0 auto;
             padding-top:0;
         }
-        @include min-xxl{
+        @include media-min($xxl){
             width:calc(60% - 24px);
         }
         &-nav{
@@ -28,7 +28,7 @@
             margin:0;
             padding:0;
             list-style-type:none;
-            @include min-sm{
+            @include media-min($sm){
                 flex-wrap:nowrap;
                 overflow-x:auto;
                 overflow-y:hidden;
@@ -37,7 +37,7 @@
                 width:100%;
                 border-left:3px solid transparent;
                 @include transition(.25s ease-in-out);
-                @include min-sm{
+                @include media-min($sm){
                     width:auto;
                     border-bottom:3px solid transparent;
                     border-left:0;
@@ -55,7 +55,7 @@
                 line-height:22px;
                 text-decoration:none;
                 @include transition(.25s ease-in-out);
-                @include min-sm{
+                @include media-min($sm){
                     padding:3px 16px 12px 16px;
                     white-space:nowrap;
                 }
@@ -63,11 +63,9 @@
                     display:inline-block;
                     margin-right:8px;
                     color:rgba($black,.18);
-                    font-size:24px;
-                    line-height:1;
                     vertical-align:-7px;
                     content:"code";
-                    @include material-icons;
+                    @include material-icons(24px);
                 }
                 &--notebook::before{
                     content:"summarize";
@@ -94,7 +92,7 @@
             overflow:auto;
             outline:none;
             @include transition(background-color .5s ease-in-out);
-            @include min-lg{
+            @include media-min($lg){
                 max-height:calc(100vh - 168px - 72px);
             }
             &--active{
@@ -122,10 +120,8 @@
             cursor:pointer;
             &--prev::before,
             &--next::after{
-                @include material-icons;
+                @include material-icons(24px);
                 display:inline-block;
-                font-size:24px;
-                line-height:24px;
                 vertical-align: -7px;
             }
             &--prev::before{
@@ -180,13 +176,13 @@ body.dark-mode .tutorial{
         }
         h1{
             font-size:1.5em;
-            @include min-sm{
+            @include media-min($sm){
                 font-size:1.77em;
             }
         }
         h2{
             font-size:1.3125em;
-            @include min-sm{
+            @include media-min($sm){
                 font-size:1.33em;
             }
         }
